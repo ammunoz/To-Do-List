@@ -21,10 +21,39 @@ namespace ToDoList
     public partial class MainWindow : Window
     {
         LoginPage login = new LoginPage();
+        RegisterPage register = new RegisterPage();
+        Dictionary<string, string> accounts = new Dictionary<string, string>();
         public MainWindow()
         {
             InitializeComponent();
-            canvas.Children.Add(login);
+            ShowLogin();
+            accounts.Add("sample", "password");
+        }
+
+        public void ShowRegister(){
+            grid.Children.Clear();
+            grid.Children.Add(register);
+        }
+
+        public void ShowLogin(){
+            grid.Children.Clear();
+            grid.Children.Add(login);
+        }
+
+        public bool VerifyAccount(string username, string password)
+        {
+            if (accounts.ContainsKey(username) && accounts[username] == password) return true;
+            else return false;
+        }
+
+        public bool CreateAccount(string username, string password)
+        {
+            if (accounts.ContainsKey(username)) return false;
+            else
+            {
+                accounts.Add(username, password);
+                return true;
+            }
         }
     }
 }

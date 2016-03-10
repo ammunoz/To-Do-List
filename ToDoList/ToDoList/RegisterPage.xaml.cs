@@ -16,19 +16,22 @@ using System.Windows.Shapes;
 namespace ToDoList
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class LoginPage : UserControl
+    public partial class RegisterPage : UserControl
     {
         MainWindow w;
-        public LoginPage()
+        public RegisterPage()
         {
             InitializeComponent();
         }
-
         private void usernameBox_GotFocus(object sender, RoutedEventArgs e)
         {
             usernameBox.Text = "";
+        }
+        private void usernameBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (usernameBox.Text == "") usernameBox.Text = "Username";
         }
 
         private void passwordLabel_GotFocus(object sender, RoutedEventArgs e)
@@ -50,25 +53,48 @@ namespace ToDoList
             passwordLabel.IsEnabled = false;
         }
 
-        private void usernameBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (usernameBox.Text == "") usernameBox.Text = "Username";
-        }
-
+        
         private void passwordBox_LostFocus(object sender, RoutedEventArgs e)
         {
         }
 
-        private void registerLabel_MouseDown(object sender, MouseButtonEventArgs e)
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            w.ShowRegister();
+            w.ShowLogin();
+        }
+
+        private void firstNameBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (firstNameBox.Text == "First Name") firstNameBox.Text = "";
+        }
+
+        private void firstNameBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (firstNameBox.Text == "") firstNameBox.Text = "First Name";
+        }
+
+        private void lastNameBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (lastNameBox.Text == "Last Name") lastNameBox.Text = "";
+        }
+        private void lastNameBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (lastNameBox.Text == "") lastNameBox.Text = "Last Name";
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            if (w.VerifyAccount(usernameBox.Text, passwordBox.Password)) ;
+            if (usernameBox.Text != "Username" && passwordBox.Password != "")
+            {
+                firstNameBox.Text = "ASDASDASD";
+                if (w.CreateAccount(usernameBox.Text, passwordBox.Password)) w.ShowLogin();
+            }
         }
+
+        
+
+        
     }
 }
