@@ -23,11 +23,9 @@ namespace ToDoList
         public HomePage()
         {
             InitializeComponent();
-            sortButton.Visibility = Visibility.Hidden;
-            editButton.Visibility = Visibility.Hidden;
-            calendarButton.Visibility = Visibility.Hidden;
-            closeButton.Visibility = Visibility.Hidden;
-            createLabel1.Visibility = Visibility.Hidden;
+            menuBorder.Visibility = Visibility.Hidden;
+            addBorder.Visibility = Visibility.Hidden;
+
         }
 
         private void Menu_MouseEnter(object sender, MouseEventArgs e)
@@ -37,30 +35,27 @@ namespace ToDoList
 
         private void Menu_MouseLeave(object sender, MouseEventArgs e)
         {
-            
-            sortButton.Visibility = Visibility.Hidden;
-            editButton.Visibility = Visibility.Hidden;
-            calendarButton.Visibility = Visibility.Hidden;
-            closeButton.Visibility = Visibility.Hidden;
+
+            menuBorder.Visibility = Visibility.Hidden;
         }
 
         private void menuLabel_MouseEnter(object sender, MouseEventArgs e)
         {
-            sortButton.Visibility = Visibility.Visible;
-            editButton.Visibility = Visibility.Visible;
-            calendarButton.Visibility = Visibility.Visible;
-            closeButton.Visibility = Visibility.Visible;
+            menuBorder.Visibility = Visibility.Visible;
         }
 
         private void createLabel_MouseEnter(object sender, MouseEventArgs e)
         {
-            createLabel1.Visibility = Visibility.Visible;
+            addBorder.Visibility = Visibility.Visible;
         }
 
-        private void createMenu_MouseLeave(object sender, MouseEventArgs e)
+        private void addBorder_MouseLeave(object sender, MouseEventArgs e)
         {
-            createLabel1.Visibility = Visibility.Hidden;
+            addBorder.Visibility = Visibility.Hidden;
         }
+
+ 
+
 
 
         

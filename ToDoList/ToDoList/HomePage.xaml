@@ -6,19 +6,31 @@
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="250">
     <Grid Background="White">
-        <StackPanel x:Name="Menu" HorizontalAlignment="Left" Height="145" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave">
-            <Label x:Name="menuLabel" Content="=" MouseEnter="menuLabel_MouseEnter"/>
-            <Label x:Name="editButton" Content="Edit"/>
-            <Label x:Name="sortButton" Content="Sort"/>
-            <Label x:Name="calendarButton" Content="Calendar"/>
-            <Label x:Name="closeButton" Content="Close" Height="24"/>
-        </StackPanel>
-        
-        
-        <StackPanel x:Name="createMenu" HorizontalAlignment="Left" Height="76" Margin="159,10,0,0" VerticalAlignment="Top" Width="71" MouseLeave="createMenu_MouseLeave">
-            <Label x:Name="createLabel" Content="+" MouseEnter="createLabel_MouseEnter" HorizontalContentAlignment="Center"/>
-            <Label x:Name="createLabel1" Content="Create Task"/>
-        </StackPanel>
+        <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
+            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240"/>
+        </ScrollViewer>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="36" Stroke="Black" VerticalAlignment="Top" Width="234"/>
+        <Border x:Name="menuBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="145" VerticalAlignment="Top" Width="75" Background="White">
+            <StackPanel x:Name="Menu" HorizontalAlignment="Left" Height="145" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave">
+                <Label Content="" MouseEnter="menuLabel_MouseEnter"/>
+                <Label x:Name="editButton" Content="Edit"/>
+                <Label x:Name="sortButton" Content="Sort" BorderBrush="Black"/>
+                <Label x:Name="calendarButton" Content="Calendar"/>
+                <Label x:Name="closeButton" Content="Close" Height="24"/>
+            </StackPanel>
+        </Border>
+        <Label x:Name="menuLabel" Content="=" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MouseEnter="menuLabel_MouseEnter"/>
+        <Border x:Name="addBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="64" Margin="159,0,0,0" VerticalAlignment="Top" Width="75" MouseLeave="addBorder_MouseLeave" Background="White">
+            <StackPanel x:Name="createMenu" HorizontalAlignment="Left" Height="54" Margin="-1,9,0,-1" VerticalAlignment="Top" Width="71">
+                <Label Content="" MouseEnter="createLabel_MouseEnter" HorizontalContentAlignment="Center"/>
+                <Label x:Name="addClassLabel" Content="Add Class"/>
+            </StackPanel>
+        </Border>
+        <Label x:Name="createLabel" Content="+" HorizontalAlignment="Center" Margin="159,10,0,0" VerticalAlignment="Top" MouseEnter="createLabel_MouseEnter"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="33" Margin="0,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="234"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="36" Margin="75,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Home" HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </UserControl>
