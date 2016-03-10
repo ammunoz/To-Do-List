@@ -12,6 +12,8 @@
         <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" Margin="55,174,0,0" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown"/>
         <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="75,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Click="button_Click"/>
         <Label x:Name="label" Content="First time?" HorizontalAlignment="Left" Margin="55,273,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="registerLabel" Content="Sign Up" HorizontalAlignment="Left" Margin="120,273,0,0" VerticalAlignment="Top" FontStyle="Oblique" MouseDown="registerLabel_MouseDown"/>
+        <Label x:Name="registerLabel" HorizontalAlignment="Left" Margin="120,273,0,0" VerticalAlignment="Top" FontStyle="Italic" MouseDown="registerLabel_MouseDown" Foreground="#FF0924A0">
+            <TextBlock TextDecorations="Underline">Sign up</TextBlock>
+        </Label>
     </Grid>
 </UserControl>

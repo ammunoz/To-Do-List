@@ -68,7 +68,7 @@ namespace ToDoList
         private void button_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            if (w.VerifyAccount(usernameBox.Text, passwordBox.Password)) ;
+            if (w.VerifyAccount(usernameBox.Text, passwordBox.Password)) w.ShowHome();
         }
     }
 }

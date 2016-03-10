@@ -22,12 +22,13 @@ namespace ToDoList
     {
         LoginPage login = new LoginPage();
         RegisterPage register = new RegisterPage();
+        HomePage home = new HomePage();
         Dictionary<string, string> accounts = new Dictionary<string, string>();
         public MainWindow()
         {
             InitializeComponent();
             ShowLogin();
-            accounts.Add("sample", "password");
+            accounts.Add("asd", "asd");
         }
 
         public void ShowRegister(){
@@ -38,6 +39,12 @@ namespace ToDoList
         public void ShowLogin(){
             grid.Children.Clear();
             grid.Children.Add(login);
+        }
+
+        public void ShowHome()
+        {
+            grid.Children.Clear();
+            grid.Children.Add(home);
         }
 
         public bool VerifyAccount(string username, string password)
