@@ -9,33 +9,39 @@
         <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
             <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240"/>
         </ScrollViewer>
-        
-        <Border x:Name="menuBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="145" VerticalAlignment="Top" Width="75" Background="White">
-            <StackPanel x:Name="Menu" HorizontalAlignment="Left" Height="145" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave">
-                <Label Content="" MouseEnter="menuLabel_MouseEnter"/>
-                <Label x:Name="editButton" Content="Edit"/>
-                <Label x:Name="sortButton" Content="Sort" BorderBrush="Black"/>
-                <Label x:Name="calendarButton" Content="Calendar" MouseDown="Calendar_MouseDown"/>
-                <Label x:Name="closeButton" Content="Close" Height="24"/>
-            </StackPanel>
-        </Border>
-        <Label x:Name="menuLabel" Content="=" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MouseEnter="menuLabel_MouseEnter"/>
-        <Border x:Name="addBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="64" Margin="159,0,0,0" VerticalAlignment="Top" Width="75" MouseLeave="addBorder_MouseLeave" Background="White">
-            <StackPanel x:Name="createMenu" HorizontalAlignment="Left" Height="54" Margin="-1,9,0,-1" VerticalAlignment="Top" Width="71">
-                <Label Content="" MouseEnter="createLabel_MouseEnter" HorizontalContentAlignment="Center"/>
-                <Label x:Name="addClassLabel" Content="Add Class"/>
-            </StackPanel>
-        </Border>
-        <Label x:Name="createLabel" Content="+" HorizontalAlignment="Center" Margin="159,10,0,0" VerticalAlignment="Top" MouseEnter="createLabel_MouseEnter"/>
-        
-        
-        
-        
-        
-        
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="33" Margin="0,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="234"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="36" Margin="75,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Home" HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top"/>
+
+        <!-- MENU BAR -->
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="36">
+            <!-- TRIPLE BAR -->
+            <MenuItem x:Name="menuLabel" Height="36" Width="83">
+                <!-- MOVABLE HEADER -->
+                <MenuItem.Header>
+                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Margin="29,0,-29,0"/>
+                </MenuItem.Header>
+
+                <!-- SUB MENUS -->
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" />
+                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" />
+                <Separator HorizontalAlignment="Left" Width="140"/>
+                <MenuItem x:Name="Back" Header="Close" HorizontalAlignment="Left" Width="140" Click="Close_Click"  />
+            </MenuItem>
+            <!-- TITLE -->
+            <MenuItem  Height="36" Width="83">
+                <MenuItem.Header>
+                    <TextBlock x:Name="Title" Text="Home" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Height="16" Margin="10,0,-11,0"/>
+                </MenuItem.Header>
+            </MenuItem>
+            <!-- ADD -->
+            <MenuItem  Height="36" Width="83">
+                <MenuItem.Header>
+                    <TextBlock Text="+" VerticalAlignment="Center" Margin="32,0,-32,0"/>
+                </MenuItem.Header>
+
+                <MenuItem Header="Add Class"  />
+
+            </MenuItem>
+        </Menu>
 
 
     </Grid>

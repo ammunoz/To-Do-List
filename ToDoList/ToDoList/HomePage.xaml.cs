@@ -25,41 +25,20 @@ namespace ToDoList
         public HomePage()
         {
             InitializeComponent();
-            menuBorder.Visibility = Visibility.Hidden;
-            addBorder.Visibility = Visibility.Hidden;
 
         }
 
-        private void Menu_MouseEnter(object sender, MouseEventArgs e)
-        {
-            
-        }
 
-        private void Menu_MouseLeave(object sender, MouseEventArgs e)
-        {
-
-            menuBorder.Visibility = Visibility.Hidden;
-        }
-
-        private void menuLabel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            menuBorder.Visibility = Visibility.Visible;
-        }
-
-        private void createLabel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            addBorder.Visibility = Visibility.Visible;
-        }
-
-        private void addBorder_MouseLeave(object sender, MouseEventArgs e)
-        {
-            addBorder.Visibility = Visibility.Hidden;
-        }
-
-        private void Calendar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void calendar_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
             w.ShowCalendar();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.ShowLogin();
         }
 
  
