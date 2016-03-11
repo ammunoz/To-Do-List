@@ -20,6 +20,8 @@ namespace ToDoList
     /// </summary>
     public partial class HomePage : UserControl
     {
+        MainWindow w;
+
         public HomePage()
         {
             InitializeComponent();
@@ -52,6 +54,12 @@ namespace ToDoList
         private void addBorder_MouseLeave(object sender, MouseEventArgs e)
         {
             addBorder.Visibility = Visibility.Hidden;
+        }
+
+        private void Calendar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.ShowCalendar();
         }
 
  

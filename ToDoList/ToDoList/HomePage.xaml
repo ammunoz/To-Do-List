@@ -9,13 +9,13 @@
         <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
             <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240"/>
         </ScrollViewer>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="36" Stroke="Black" VerticalAlignment="Top" Width="234"/>
+        
         <Border x:Name="menuBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="145" VerticalAlignment="Top" Width="75" Background="White">
             <StackPanel x:Name="Menu" HorizontalAlignment="Left" Height="145" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave">
                 <Label Content="" MouseEnter="menuLabel_MouseEnter"/>
                 <Label x:Name="editButton" Content="Edit"/>
                 <Label x:Name="sortButton" Content="Sort" BorderBrush="Black"/>
-                <Label x:Name="calendarButton" Content="Calendar"/>
+                <Label x:Name="calendarButton" Content="Calendar" MouseDown="Calendar_MouseDown"/>
                 <Label x:Name="closeButton" Content="Close" Height="24"/>
             </StackPanel>
         </Border>
@@ -27,6 +27,12 @@
             </StackPanel>
         </Border>
         <Label x:Name="createLabel" Content="+" HorizontalAlignment="Center" Margin="159,10,0,0" VerticalAlignment="Top" MouseEnter="createLabel_MouseEnter"/>
+        
+        
+        
+        
+        
+        
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="33" Margin="0,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="234"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="36" Margin="75,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="84"/>
         <Label Content="Home" HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top"/>
