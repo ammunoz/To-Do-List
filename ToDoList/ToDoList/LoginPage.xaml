@@ -15,5 +15,8 @@
         <Label x:Name="registerLabel" HorizontalAlignment="Left" Margin="120,273,0,0" VerticalAlignment="Top" FontStyle="Italic" MouseDown="registerLabel_MouseDown" Foreground="#FF0924A0">
             <TextBlock TextDecorations="Underline">Sign up</TextBlock>
         </Label>
+
+        <!-- IMAGE -->
+        <Image Source ="Images/to-do-symbol.jpg"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="69,10,0,0"/>
     </Grid>
 </UserControl>

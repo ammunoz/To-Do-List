@@ -10,19 +10,19 @@
 
     <Grid Background="White">
         <!-- MENU BAR -->
-        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="517" Height="36">
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="36">
             <!-- TRIPLE BAR -->
-            <MenuItem Height="36" Width="83">
+            <MenuItem x:Name="menuLabel" Height="36" Width="83">
                 <!-- MOVABLE HEADER -->
                 <MenuItem.Header>
                     <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Margin="29,0,-29,0"/>
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Place Holder 1" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click"/>
-                <MenuItem Header="Place Holder 2" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click"/>
+                <MenuItem Header="Place Holder 1" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Place Holder 2" HorizontalAlignment="Left" Width="140" />
                 <Separator HorizontalAlignment="Left" Width="140"/>
-                <MenuItem Header="Place Holder 3" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click"/>
+                <MenuItem Header="Place Holder 3" HorizontalAlignment="Left" Width="140" />
             </MenuItem>
             <!-- TITLE -->
             <MenuItem  Height="36" Width="83">
@@ -42,8 +42,8 @@
         </Menu>
 
         <!-- Inside Part -->
-        <Viewbox HorizontalAlignment="Left" Height="238" Margin="0,75,0,0" VerticalAlignment="Top" Width="250">
-            <Calendar SelectionMode="MultipleRange" />
+        <Viewbox HorizontalAlignment="Left" Height="265" Margin="0,75,0,0" VerticalAlignment="Top" Width="250">
+            <Calendar SelectionMode="MultipleRange" Height="184" />
         </Viewbox>
 
     </Grid>
