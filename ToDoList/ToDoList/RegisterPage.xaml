@@ -11,7 +11,7 @@
         <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="55" Canvas.Top="238"/>
         <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Canvas.Left="150" Canvas.Top="286" Click="button_Click"/>
         <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Canvas.Left="10" Canvas.Top="286" Click="button_Copy_Click"/>
-        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="55" Canvas.Top="124"/>
+        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="55" Canvas.Top="125"/>
         <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="120" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="55" Canvas.Top="162"/>
 
     </Canvas>
