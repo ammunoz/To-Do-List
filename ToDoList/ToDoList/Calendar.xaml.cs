@@ -33,7 +33,7 @@ namespace ToDoList
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            w.ShowHome();
+            w.ShowPrevPage();
         }
 
         private void calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)

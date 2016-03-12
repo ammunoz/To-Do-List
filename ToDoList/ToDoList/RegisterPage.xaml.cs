@@ -88,7 +88,6 @@ namespace ToDoList
             w = Window.GetWindow(this) as MainWindow;
             if (usernameBox.Text != "Username" && passwordBox.Password != "")
             {
-                firstNameBox.Text = "ASDASDASD";
                 if (w.CreateAccount(usernameBox.Text, passwordBox.Password)) w.ShowLogin();
             }
         }

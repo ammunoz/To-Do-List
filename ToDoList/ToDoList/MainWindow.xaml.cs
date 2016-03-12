@@ -27,29 +27,11 @@ namespace ToDoList
         Calendar calendar = new Calendar();
         CalendarDay calendarDay = new CalendarDay();
         MemberPage member = new MemberPage();
+        UserControl currentPage;
 
-        // make a PREV variable in each .CS file?
-        // then we just make a global switch case?
-        // Switch.CS and we call functions in it which calls functions in MainWindow? ._.
-
-        // HOW DO WE GO BACK TO THE RIGHT USER INTERFACE AS THE PROGRAM GETS BIGGER?
-        // MY IDEA WAS A SWITCH CASE BUT WE HAVE TO MAKE IT FOR EACH .XAML
-        // IF WE ONLY DO IT HERE WE CAN ONLY GO BACK 1 STEP
-        /*
-        // way to keep track of back
-        int REGISTER = 0;
-        int LOGIN = 1;
-        int HOME = 2;
-        // int CLASS = 3;
-        // int TASK = 4;
-        int CALENDAR = 5;
-        int CALENDAR_DAY = 6;
-        int MEMBER = 7;
-
-        string PREV_PAGE = "home";
-        */
-
+        Stack<UserControl> pageStack = new Stack<UserControl>();
         Dictionary<string, string> accounts = new Dictionary<string, string>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -60,37 +42,58 @@ namespace ToDoList
         public void ShowRegister(){
             grid.Children.Clear();
             grid.Children.Add(register);
+            pageStack.Push(register);
+            currentPage = register;
         }
 
         public void ShowLogin(){
             grid.Children.Clear();
             grid.Children.Add(login);
+            pageStack.Push(login);
+            currentPage = login;
         }
 
         public void ShowHome()
         {
             grid.Children.Clear();
             grid.Children.Add(home);
+            pageStack.Push(home);
+            currentPage = home;
         }
 
         public void ShowCalendar()
         {
             grid.Children.Clear();
             grid.Children.Add(calendar);
+            pageStack.Push(calendar);
+            currentPage = calendar;
         }
 
         public void ShowCalendarDay()
         {
             grid.Children.Clear();
             grid.Children.Add(calendarDay);
-            
+            pageStack.Push(calendarDay);
+            currentPage = calendarDay;
         }
 
         public void ShowMember()
         {
             grid.Children.Clear();
             grid.Children.Add(member);
+            pageStack.Push(member);
+            currentPage = member;
+        }
 
+        public void ShowPrevPage()
+        {
+            if (pageStack.Count > 0)
+            {
+                grid.Children.Clear();
+                if(pageStack.Peek().Equals(currentPage)) pageStack.Pop();
+                currentPage = pageStack.Peek();
+                grid.Children.Add(currentPage);
+            }
         }
 
         // Sets the title in CalendayDay

@@ -26,5 +26,11 @@ namespace ToDoList
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = Window.GetWindow(this) as MainWindow;
+            w.ShowPrevPage();
+        }
     }
 }
