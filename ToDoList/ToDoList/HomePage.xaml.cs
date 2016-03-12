@@ -41,6 +41,27 @@ namespace ToDoList
             w.ShowLogin();
         }
 
+        private void MenuItem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void addClassButton_Click(object sender, RoutedEventArgs e)
+        {
+            test.Content = "HELLO";
+            w = Window.GetWindow(this) as MainWindow;
+            AddClassWindow addClassWindow = new AddClassWindow();
+            addClassWindow.Owner = w;
+            addClassWindow.ShowInTaskbar = false;
+            addClassWindow.ResizeMode = ResizeMode.NoResize;
+
+            if (addClassWindow.ShowDialog() == true)
+            {
+                w.AddClass(addClassWindow.ClassName);
+                classStackPanel.Children.Add(new Label { Content = addClassWindow.ClassName });
+            }
+        }
+
  
 
 

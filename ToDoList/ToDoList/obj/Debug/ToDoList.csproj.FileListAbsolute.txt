@@ -66,3 +66,5 @@ D:\CPSC481\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
 \\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\Calendar.g.cs
 \\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\CalendarDay.g.cs
 \\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\MemberPage.g.cs
+\\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\AddClassWindow.baml
+\\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\AddClassWindow.g.cs

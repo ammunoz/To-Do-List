@@ -7,7 +7,8 @@
              d:DesignHeight="380" d:DesignWidth="250">
     <Grid Background="White">
         <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
-            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240"/>
+            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240">
+            </StackPanel>
         </ScrollViewer>
 
         <!-- MENU BAR -->
@@ -38,10 +39,11 @@
                     <TextBlock Text="+" VerticalAlignment="Center" Margin="32,0,-32,0"/>
                 </MenuItem.Header>
 
-                <MenuItem Header="Add Class"  />
+                <MenuItem x:Name="addClassButton" Header="Add Class" MouseDown="MenuItem_MouseDown" Click="addClassButton_Click"  />
 
             </MenuItem>
         </Menu>
+        <Label x:Name="test" Content=" " HorizontalAlignment="Left" Margin="96,339,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

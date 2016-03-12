@@ -31,6 +31,7 @@ namespace ToDoList
 
         Stack<UserControl> pageStack = new Stack<UserControl>();
         Dictionary<string, string> accounts = new Dictionary<string, string>();
+        Dictionary<string, aClass> classes = new Dictionary<string, aClass>();
 
         public MainWindow()
         {
@@ -116,6 +117,12 @@ namespace ToDoList
                 accounts.Add(username, password);
                 return true;
             }
+        }
+
+        public void AddClass(string className)
+        {
+            aClass c = new aClass(className);
+            classes.Add(className, c);
         }
     }
 }
