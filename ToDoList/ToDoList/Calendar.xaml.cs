@@ -42,7 +42,7 @@ namespace ToDoList
             w = Window.GetWindow(this) as MainWindow;
 
             // set up date
-            date += Months[calendar.SelectedDate.Value.Month];
+            date += Months[calendar.SelectedDate.Value.Month - 1];
             date += " " + calendar.SelectedDate.Value.Day.ToString();            
             w.SetDate(date);
 
