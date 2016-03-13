@@ -48,7 +48,6 @@ namespace ToDoList
 
         private void addClassButton_Click(object sender, RoutedEventArgs e)
         {
-            test.Content = "HELLO";
             w = Window.GetWindow(this) as MainWindow;
             AddClassWindow addClassWindow = new AddClassWindow();
             addClassWindow.Owner = w;
@@ -57,16 +56,30 @@ namespace ToDoList
 
             if (addClassWindow.ShowDialog() == true)
             {
-                w.AddClass(addClassWindow.ClassName);
-                classStackPanel.Children.Add(new Label { Content = addClassWindow.ClassName });
+                if (w.AddClass(addClassWindow.ClassName))
+                {
+                    Button button = new Button
+                    {
+                        Content = addClassWindow.ClassName,
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        FontWeight = FontWeights.Bold,
+                        Background = Brushes.White,
+                        BorderThickness = new System.Windows.Thickness(0)
+                    };
+                    button.Click += new RoutedEventHandler(classButton_Click);
+                    classStackPanel.Children.Add(button);
+                }
             }
         }
 
- 
-
-
-
-        
+        // Click event handler for created class buttons
+        private void classButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 1. Open Task create page - e.g., AddClassWindow
+            // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");
+            // 3. Add any members to aTask. e.g., task.AddMember(member1)
+            // 4. Add created aTask object to selected aClass. i.e., class.AddTask(aTask)
+        }
 
     }
 }

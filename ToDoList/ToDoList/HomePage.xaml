@@ -43,7 +43,7 @@
 
             </MenuItem>
         </Menu>
-        <Label x:Name="test" Content=" " HorizontalAlignment="Left" Margin="96,339,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
 
 
     </Grid>

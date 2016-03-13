@@ -119,10 +119,15 @@ namespace ToDoList
             }
         }
 
-        public void AddClass(string className)
+        public bool AddClass(string className)
         {
-            aClass c = new aClass(className);
-            classes.Add(className, c);
+            if (!classes.ContainsKey(className))
+            {
+                aClass c = new aClass(className);
+                classes.Add(className, c);
+                return true;
+            }
+            else return false;
         }
     }
 }

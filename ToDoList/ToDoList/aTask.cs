@@ -8,13 +8,24 @@ namespace ToDoList
 {
     class aTask
     {
-        string name;
-        DateTime due; // TODO update
+        string taskName;
+        DateTime due; // TODO Change if needed
+        HashSet<string> members;
 
         public aTask(string s, DateTime d)
         {
-            name = s;
+            taskName = s;
             due = d;
+        }
+
+        public bool AddMember(string member)
+        {
+            if (!members.Contains(member))
+            {
+                members.Add(member);
+                return true;
+            }
+            else return false;
         }
     }
 }

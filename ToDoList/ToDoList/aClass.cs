@@ -15,5 +15,16 @@ namespace ToDoList
         {
             name = s;
         }
+
+        // Adds task to tasks. Returns true if successful
+        public bool AddTask(aTask task)
+        {
+            if (!tasks.Contains(task))
+            {
+                tasks.Add(task);
+                return true;
+            }
+            else return false;
+        }
     }
 }

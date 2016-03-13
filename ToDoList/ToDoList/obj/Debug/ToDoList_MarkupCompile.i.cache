@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-\\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\
+D:\CPSC481\ToDoList\ToDoList\obj\Debug\
 ToDoList
 none
 false
 DEBUG;TRACE
-\\cs-fs01\Profiles\ug\ammunoz\Desktop\To-Do-List\ToDoList\ToDoList\App.xaml
+D:\CPSC481\ToDoList\ToDoList\App.xaml
 81509884924
 
-18739454757
+18-735226257
 13-1142990016
 AddClassWindow.xaml;Calendar.xaml;CalendarDay.xaml;HomePage.xaml;LoginPage.xaml;MainWindow.xaml;MemberPage.xaml;RegisterPage.xaml;
 
