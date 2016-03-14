@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,12 @@ namespace ToDoList
     public class aClass
     {
         string name;
-        Dictionary<string, aTask> tasks;
+        ConcurrentDictionary<string, aTask> tasks;
 
         public aClass(string s)
         {
             name = s;
-            tasks = new Dictionary<string, aTask>();
+            tasks = new ConcurrentDictionary<string, aTask>();
         }
 
         // Adds task to tasks. Returns true if successful
@@ -23,7 +24,7 @@ namespace ToDoList
             if (!tasks.ContainsKey(taskName))
             {
                 aTask task = new aTask(taskName, month, day, year, description);
-                tasks.Add(taskName, task);
+                tasks.TryAdd(taskName, task);
                 return true;
             }
             else return false;

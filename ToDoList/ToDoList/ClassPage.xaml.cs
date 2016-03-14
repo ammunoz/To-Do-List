@@ -22,6 +22,7 @@ namespace ToDoList
     {
 
         MainWindow w;
+        string month, day, year, d;
         
         // class data
 
@@ -59,11 +60,14 @@ namespace ToDoList
             
             if (addTaskWindow.ShowDialog() == true)
             {
-                if (w.GetClass(Title.Text).AddTask(addTaskWindow.TaskName, addTaskWindow.Month.SelectedItem.ToString(),
-                    addTaskWindow.Day.SelectedItem.ToString(), addTaskWindow.Year.SelectedItem.ToString(),
+                if (w.GetClass(Title.Text).AddTask(addTaskWindow.TaskName, addTaskWindow.Month.Text,
+                    addTaskWindow.Day.Text, addTaskWindow.Year.Text,
                     addTaskWindow.description.Text))
                 {
-                    
+                    month = addTaskWindow.Month.Text;
+                    day = addTaskWindow.Day.Text;
+                    year = addTaskWindow.Year.Text;
+                    d = addTaskWindow.description.Text;
                     Button button = new Button
                     {
 
@@ -84,7 +88,7 @@ namespace ToDoList
         {
             w = Window.GetWindow(this) as MainWindow;
             string title = (sender as Button).Content.ToString();
-            w.PopulateInfo(title, Title.Text);
+            w.PopulateInfo(title, Title.Text, month, day, year, d);
             w.ShowTaskPage();
             // 1. Open Task create page - e.g., AddClassWindow
             // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");

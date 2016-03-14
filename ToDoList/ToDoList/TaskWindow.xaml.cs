@@ -28,12 +28,18 @@ namespace ToDoList
             InitializeComponent();
         }
 
-        public void PopulateInfo(string taskTitle, string classTitle)
+        public void PopulateInfo(string taskTitle, string classTitle, string month, string day, string year, string d)
         {
             Title.Text = taskTitle;
             className = classTitle;
 
             w = Window.GetWindow(this) as MainWindow;
+            Month.SelectedItem = month;
+            Month.Text = month;
+            Day.Text = day; 
+            Year.Text = year; 
+            description.Text = d;
+            /*
             aClass c = w.GetClass(classTitle);
 
             if (c != null)
@@ -42,12 +48,10 @@ namespace ToDoList
                 if (task != null)
                 {
                     string[] info = task.GetInfo();
-                    Month.SelectedItem = info[0];
-                    Day.SelectedItem = info[1];
-                    Year.SelectedItem = info[2];
-                    description.Text = info[3];
+                    
                 }
             }
+            */
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

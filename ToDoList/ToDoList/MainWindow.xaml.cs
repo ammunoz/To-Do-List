@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,16 +34,17 @@ namespace ToDoList
         UserControl currentPage;
 
         Stack<UserControl> pageStack = new Stack<UserControl>();
-        Dictionary<string, string> accounts = new Dictionary<string, string>();
-        Dictionary<string, aClass> classes = new Dictionary<string, aClass>();
-        Dictionary<string, aTask> tasks  = new Dictionary<string, aTask>();
+        ConcurrentDictionary<string, string> accounts = new ConcurrentDictionary<string, string>();
+        ConcurrentDictionary<string, aClass> classes = new ConcurrentDictionary<string, aClass>();
+        ConcurrentDictionary<string, aTask> tasks  = new ConcurrentDictionary<string, aTask>();
 
 
         public MainWindow()
         {
             InitializeComponent();
             ShowLogin();
-            accounts.Add("asd", "asd");
+            accounts.TryAdd("asd", "asd");
+            classes.TryAdd("asd", new aClass("asd"));
         }
 
         public void ShowRegister(){
@@ -140,9 +142,9 @@ namespace ToDoList
         }
 
 
-        public void PopulateInfo(string taskTitle, string classTitle)
+        public void PopulateInfo(string taskTitle, string classTitle, string month, string day, string year, string d)
         {
-            taskPage.PopulateInfo(taskTitle, classTitle);
+            taskPage.PopulateInfo(taskTitle, classTitle, month, day, year, d);
         }
 
 
@@ -158,7 +160,7 @@ namespace ToDoList
             if (accounts.ContainsKey(username)) return false;
             else
             {
-                accounts.Add(username, password);
+                accounts.TryAdd(username, password);
                 return true;
             }
         }
@@ -168,7 +170,7 @@ namespace ToDoList
             if (!classes.ContainsKey(className))
             {
                 aClass c = new aClass(className);
-                classes.Add(className, c);
+                classes.TryAdd(className, c);
                 return true;
             }
             else return false;
@@ -176,9 +178,9 @@ namespace ToDoList
 
         public aClass GetClass(string className)
         {
-            aClass aclass;
+            aClass aclass = new aClass("a");
             if (classes.TryGetValue(className, out aclass)) return aclass;
-            else return null;
+            else return aclass;
         }
     }
 }

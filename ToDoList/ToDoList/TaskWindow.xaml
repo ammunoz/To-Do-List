@@ -34,7 +34,7 @@
         <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Assigned To:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Due Date" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="Month" Text="Month" IsEditable="True" Canvas.Left="10" Canvas.Top="167" Width="76">
+        <ComboBox x:Name="Month" Text="Month" IsEditable="True" Canvas.Left="10" Canvas.Top="167" Width="76" SelectedValuePath="Content">
             <ComboBoxItem Content="January" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="February" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="March" HorizontalAlignment="Left" Width="118"/>
@@ -48,7 +48,7 @@
             <ComboBoxItem Content="November" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="December" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Day" Text="Day" IsEditable="True" Canvas.Left="91" Canvas.Top="167" Width="59">
+        <ComboBox x:Name="Day" Text="Day" IsEditable="True" Canvas.Left="91" Canvas.Top="167" Width="59" SelectedValuePath="Content">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="118"/>
@@ -60,7 +60,7 @@
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Year" Text="Year" IsEditable="True" Canvas.Left="157" Canvas.Top="167" Width="75">
+        <ComboBox x:Name="Year" Text="Year" IsEditable="True" Canvas.Left="157" Canvas.Top="167" Width="75" SelectedValuePath="Content">
             <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="118"/>
