@@ -28,6 +28,7 @@ namespace ToDoList
         CalendarDay calendarDay = new CalendarDay();
         MemberPage member = new MemberPage();
         ClassPage classPage = new ClassPage();
+        TaskWindow taskPage = new TaskWindow();
         UserControl currentPage;
 
         Stack<UserControl> pageStack = new Stack<UserControl>();
@@ -95,6 +96,14 @@ namespace ToDoList
             grid.Children.Add(classPage);
             pageStack.Push(classPage);
             currentPage = classPage;
+        }
+
+        public void ShowTaskPage()
+        {
+            grid.Children.Clear();
+            grid.Children.Add(classPage);
+            pageStack.Push(taskPage);
+            currentPage = taskPage;
         }
 
         public void ShowPrevPage()

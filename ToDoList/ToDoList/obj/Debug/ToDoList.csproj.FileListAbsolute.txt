@@ -30,3 +30,5 @@ C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\ClassPage.g.cs
 C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\AddTaskWindow.baml
 C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\ClassPage.baml
 C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\TaskWindow.g.cs
+C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\TaskWindow.baml
