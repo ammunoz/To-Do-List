@@ -27,6 +27,7 @@ namespace ToDoList
         Calendar calendar = new Calendar();
         CalendarDay calendarDay = new CalendarDay();
         MemberPage member = new MemberPage();
+        MessagePage message = new MessagePage();
         ClassPage classPage = new ClassPage();
         TaskWindow taskPage = new TaskWindow();
         UserControl currentPage;
@@ -105,6 +106,15 @@ namespace ToDoList
             pageStack.Push(taskPage);
             currentPage = taskPage;
         }
+
+        public void ShowMessagePage()
+        {
+            grid.Children.Clear();
+            grid.Children.Add(message);
+            pageStack.Push(message);
+            currentPage = message;
+        }
+
 
         public void ShowPrevPage()
         {

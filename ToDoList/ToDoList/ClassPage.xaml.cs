@@ -86,6 +86,11 @@ namespace ToDoList
             // 4. Add created aTask object to selected aClass. i.e., class.AddTask(aTask)
         }
 
+        private void member_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.ShowMember();
+        }
     }
 
 }

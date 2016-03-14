@@ -16,38 +16,22 @@ using System.Windows.Shapes;
 namespace ToDoList
 {
     /// <summary>
-    /// Interaction logic for TaskWindow.xaml
+    /// Interaction logic for MessagePage.xaml
     /// </summary>
-    public partial class TaskWindow : UserControl
+    public partial class MessagePage : UserControl
     {
+
         MainWindow w;
 
-        public TaskWindow()
+        public MessagePage()
         {
             InitializeComponent();
         }
 
-        public void SetTitle(String title)
-        {
-            Title.Text = title;
-        }
-
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            w = Window.GetWindow(this) as MainWindow;
+            MainWindow w = Window.GetWindow(this) as MainWindow;
             w.ShowPrevPage();
-        }
-
-        private void calendar_Click(object sender, RoutedEventArgs e)
-        {
-            w = Window.GetWindow(this) as MainWindow;
-            w.ShowCalendar();
-        }
-
-        private void member_Click(object sender, RoutedEventArgs e)
-        {
-            w = Window.GetWindow(this) as MainWindow;
-            w.ShowMember(); ;
         }
     }
 }

@@ -32,5 +32,11 @@ namespace ToDoList
             MainWindow w = Window.GetWindow(this) as MainWindow;
             w.ShowPrevPage();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = Window.GetWindow(this) as MainWindow;
+            w.ShowMessagePage();
+        }
     }
 }
