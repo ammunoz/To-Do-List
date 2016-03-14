@@ -70,6 +70,9 @@
         <Button x:Name="saveButton" Content="Save" Click="saveButton_Click" Canvas.Left="138" Canvas.Top="323" Width="49" />
         <Button x:Name="cancelButton" Content="Cancel" Click="cancelButton_Click" Canvas.Left="11" Canvas.Top="323" Width="59"/>
         <ScrollViewer x:Name="AssignedMembers" HorizontalAlignment="Left" Height="58" Margin="11,75,0,0" VerticalAlignment="Top" Width="221">
+            <StackPanel x:Name="MemberPanel">
+                <Label Content="Member 1"/>
+            </StackPanel>
         </ScrollViewer>
 
     </Canvas>

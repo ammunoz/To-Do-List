@@ -39,8 +39,6 @@
         </Menu>
 
         <!-- Test -->
-        <Button x:Name="button" Content="Member 1" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="250" Height="33" Click="button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="41" Margin="0,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
-
+        <Button Content="Member 1" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="250" Height="33" Click="button_Click"/>
     </Grid>
 </UserControl>

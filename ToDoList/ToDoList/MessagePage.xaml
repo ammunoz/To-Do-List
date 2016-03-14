@@ -30,5 +30,13 @@
             </MenuItem>
           
         </Menu>
+        <TextBox x:Name="MessageBox" HorizontalAlignment="Left" Height="41" Margin="10,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <ScrollViewer x:Name="MessageScroll" HorizontalAlignment="Left" Height="188" Margin="10,79,0,0" VerticalAlignment="Top" Width="221">
+            <StackPanel x:Name="MessagePanel">
+                <Label Content="Hello"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Button x:Name="button1" Content="Send" HorizontalAlignment="Left" Margin="199,283,0,0" VerticalAlignment="Top" Width="32" Height="41" Click="SendButton_Click"/>
+
     </Grid>
 </UserControl>

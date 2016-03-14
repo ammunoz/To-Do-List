@@ -33,5 +33,16 @@ namespace ToDoList
             MainWindow w = Window.GetWindow(this) as MainWindow;
             w.ShowPrevPage();
         }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessagePanel.Children.Add(new Label
+            {
+                Content = MessageBox.Text,
+                HorizontalAlignment = HorizontalAlignment.Right,
+            });
+            MessageBox.Text = "";
+            MessageBox.Focus();
+        }
     }
 }

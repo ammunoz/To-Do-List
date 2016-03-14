@@ -44,7 +44,6 @@ namespace ToDoList
             InitializeComponent();
             ShowLogin();
             accounts.TryAdd("asd", "asd");
-            classes.TryAdd("asd", new aClass("asd"));
         }
 
         public void ShowRegister(){

@@ -38,5 +38,7 @@ namespace ToDoList
             MainWindow w = Window.GetWindow(this) as MainWindow;
             w.ShowMessagePage();
         }
+
+        
     }
 }
