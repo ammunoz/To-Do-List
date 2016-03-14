@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\CPSC481\ToDoList\ToDoList\obj\Debug\
+C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\obj\Debug\
 ToDoList
 none
 false
 DEBUG;TRACE
-D:\CPSC481\ToDoList\ToDoList\App.xaml
-81509884924
+C:\Users\Jerome\Desktop\To-Do-List\ToDoList\ToDoList\App.xaml
+10-2083256386
 
-14-481385669
+16-78292198
 13-1142990016
-AddClassWindow.xaml;Calendar.xaml;CalendarDay.xaml;HomePage.xaml;LoginPage.xaml;MainWindow.xaml;MemberPage.xaml;RegisterPage.xaml;
+AddClassWindow.xaml;AddTaskWindow.xaml;Calendar.xaml;CalendarDay.xaml;ClassPage.xaml;HomePage.xaml;LoginPage.xaml;MainWindow.xaml;MemberPage.xaml;RegisterPage.xaml;
 
 False
 

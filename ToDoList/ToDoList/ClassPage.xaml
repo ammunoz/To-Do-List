@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ToDoList.ClassPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToDoList"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="250">
+    <Grid Background="White">
+
+        <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
+            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240">
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+        <!-- MENU BAR -->
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="36">
+            <!-- TRIPLE BAR -->
+            <MenuItem x:Name="menuLabel" Height="36" Width="83" >
+                <!-- MOVABLE HEADER -->
+                <MenuItem.Header>
+                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Margin="29,0,-29,0"/>
+                </MenuItem.Header>
+
+                <!-- SUB MENUS -->
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" />
+                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" />
+                <Separator HorizontalAlignment="Left" Width="140"/>
+                <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click"  />
+            </MenuItem>
+            <!-- TITLE -->
+            <MenuItem  Height="36" Width="83">
+                <MenuItem.Header>
+                    <TextBlock x:Name="Title" Text="Class" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Height="16" Margin="10,0,-11,0"/>
+                </MenuItem.Header>
+            </MenuItem>
+            <!-- ADD -->
+            <MenuItem  Height="36" Width="83">
+                <MenuItem.Header>
+                    <TextBlock Text="+" VerticalAlignment="Center" Margin="32,0,-32,0"/>
+                </MenuItem.Header>
+
+                <MenuItem x:Name="addClassButton" Header="Add Task" Click="addClassButton_Click"  />
+
+            </MenuItem>
+        </Menu>
+        <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

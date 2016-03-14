@@ -10,7 +10,9 @@ namespace ToDoList
     {
         string taskName;
         DateTime due; // TODO Change if needed
-        HashSet<string> members;
+        HashSet<string> members = new HashSet<string>();
+        String description;
+
 
         public aTask(string s, DateTime d)
         {
@@ -27,5 +29,7 @@ namespace ToDoList
             }
             else return false;
         }
+
+        
     }
 }

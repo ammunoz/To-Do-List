@@ -27,11 +27,14 @@ namespace ToDoList
         Calendar calendar = new Calendar();
         CalendarDay calendarDay = new CalendarDay();
         MemberPage member = new MemberPage();
+        ClassPage classPage = new ClassPage();
         UserControl currentPage;
 
         Stack<UserControl> pageStack = new Stack<UserControl>();
         Dictionary<string, string> accounts = new Dictionary<string, string>();
         Dictionary<string, aClass> classes = new Dictionary<string, aClass>();
+        Dictionary<string, aTask> tasks  = new Dictionary<string, aTask>();
+
 
         public MainWindow()
         {
@@ -86,6 +89,14 @@ namespace ToDoList
             currentPage = member;
         }
 
+        public void ShowClassPage()
+        {
+            grid.Children.Clear();
+            grid.Children.Add(classPage);
+            pageStack.Push(classPage);
+            currentPage = classPage;
+        }
+
         public void ShowPrevPage()
         {
             if (pageStack.Count > 0)
@@ -102,6 +113,13 @@ namespace ToDoList
         {
             calendarDay.SetDate(date);
         }
+
+        // set class title
+        public void SetClassTitle(String title)
+        {
+            classPage.SetTitle(title);
+        }
+
 
         public bool VerifyAccount(string username, string password)
         {
