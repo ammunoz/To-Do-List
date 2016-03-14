@@ -20,9 +20,28 @@ namespace ToDoList
     /// </summary>
     public partial class TaskWindow : UserControl
     {
+        MainWindow w;
+
         public TaskWindow()
         {
             InitializeComponent();
+        }
+
+        public void SetTitle(String title)
+        {
+            Title.Text = title;
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.ShowPrevPage();
+        }
+
+        private void calendar_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.ShowCalendar(); ;
         }
     }
 }

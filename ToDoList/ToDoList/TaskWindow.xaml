@@ -18,10 +18,10 @@
 
                 <!-- SUB MENUS -->
                 <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
-                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" />
-                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140"  />
+                <MenuItem Header="Place Holder" HorizontalAlignment="Left" Width="140" />
+                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click"  />
                 <Separator HorizontalAlignment="Left" Width="140"/>
-                <MenuItem x:Name="Back" Header="Close" HorizontalAlignment="Left" Width="140"   />
+                <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click"   />
             </MenuItem>
             <!-- TITLE -->
             <MenuItem  Height="36" Width="83">

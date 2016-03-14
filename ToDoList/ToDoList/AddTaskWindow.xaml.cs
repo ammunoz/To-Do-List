@@ -48,5 +48,10 @@ namespace ToDoList
         {
             if (addTaskBox.Text == "") addTaskBox.Text = "Task Name";
         }
+
+        private void doneButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }

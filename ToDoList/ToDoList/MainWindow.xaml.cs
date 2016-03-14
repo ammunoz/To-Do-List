@@ -101,7 +101,7 @@ namespace ToDoList
         public void ShowTaskPage()
         {
             grid.Children.Clear();
-            grid.Children.Add(classPage);
+            grid.Children.Add(taskPage);
             pageStack.Push(taskPage);
             currentPage = taskPage;
         }
@@ -128,6 +128,12 @@ namespace ToDoList
         {
             classPage.SetTitle(title);
         }
+
+        public void SetTaskTitle(String title)
+        {
+            taskPage.SetTitle(title);
+        }
+
 
 
         public bool VerifyAccount(string username, string password)

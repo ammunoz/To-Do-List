@@ -68,10 +68,24 @@ namespace ToDoList
                     Background = Brushes.White,
                     BorderThickness = new System.Windows.Thickness(0)
                 };
-                //button.Click += new RoutedEventHandler(classButton_Click);
+                button.Click += new RoutedEventHandler(taskButton_Click);
 
                 classStackPanel.Children.Add(button);
             }
         }
+
+        private void taskButton_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            string title = (sender as Button).Content.ToString();
+            w.SetTaskTitle(title);
+            w.ShowTaskPage();
+            // 1. Open Task create page - e.g., AddClassWindow
+            // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");
+            // 3. Add any members to aTask. e.g., task.AddMember(member1)
+            // 4. Add created aTask object to selected aClass. i.e., class.AddTask(aTask)
+        }
+
     }
+
 }
