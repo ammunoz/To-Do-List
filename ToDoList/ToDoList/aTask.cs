@@ -6,18 +6,29 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    class aTask
+    public class aTask
     {
         string taskName;
-        DateTime due; // TODO Change if needed
+        string month, day, year; // TODO Change if needed
         HashSet<string> members = new HashSet<string>();
         String description;
 
 
-        public aTask(string s, DateTime d)
+        public aTask(string s, string m, string d, string y, string desc)
         {
             taskName = s;
-            due = d;
+            month = m;
+            day = d;
+            year = y;
+            description = desc;
+        }
+
+        public void ModifyTask(string m, string d, string y, string desc)
+        {
+            month = m;
+            day = d;
+            year = y;
+            description = desc;
         }
 
         public bool AddMember(string member)
@@ -30,6 +41,14 @@ namespace ToDoList
             else return false;
         }
 
-        
+        public string[] GetInfo()
+        {
+            string[] s = new string[4];
+            s[0] = month;
+            s[1] = day;
+            s[2] = year;
+            s[3] = description;
+            return s;
+        }
     }
 }

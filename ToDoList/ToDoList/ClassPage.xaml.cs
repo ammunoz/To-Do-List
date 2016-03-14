@@ -22,7 +22,7 @@ namespace ToDoList
     {
 
         MainWindow w;
-
+        
         // class data
 
 
@@ -56,21 +56,27 @@ namespace ToDoList
             addTaskWindow.Owner = w;
             addTaskWindow.ShowInTaskbar = false;
             addTaskWindow.ResizeMode = ResizeMode.NoResize;
-
+            
             if (addTaskWindow.ShowDialog() == true)
             {
-                Button button = new Button
+                if (w.GetClass(Title.Text).AddTask(addTaskWindow.TaskName, addTaskWindow.Month.SelectedItem.ToString(),
+                    addTaskWindow.Day.SelectedItem.ToString(), addTaskWindow.Year.SelectedItem.ToString(),
+                    addTaskWindow.description.Text))
                 {
+                    
+                    Button button = new Button
+                    {
 
-                    Content = addTaskWindow.TaskName,
-                    HorizontalAlignment = HorizontalAlignment.Stretch,
-                    FontWeight = FontWeights.Bold,
-                    Background = Brushes.White,
-                    BorderThickness = new System.Windows.Thickness(0)
-                };
-                button.Click += new RoutedEventHandler(taskButton_Click);
+                        Content = addTaskWindow.TaskName,
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        FontWeight = FontWeights.Bold,
+                        Background = Brushes.White,
+                        BorderThickness = new System.Windows.Thickness(0)
+                    };
+                    button.Click += new RoutedEventHandler(taskButton_Click);
 
-                classStackPanel.Children.Add(button);
+                    classStackPanel.Children.Add(button);
+                }
             }
         }
 
@@ -78,7 +84,7 @@ namespace ToDoList
         {
             w = Window.GetWindow(this) as MainWindow;
             string title = (sender as Button).Content.ToString();
-            w.SetTaskTitle(title);
+            w.PopulateInfo(title, Title.Text);
             w.ShowTaskPage();
             // 1. Open Task create page - e.g., AddClassWindow
             // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");

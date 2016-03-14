@@ -6,25 +6,34 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    class aClass
+    public class aClass
     {
         string name;
-        HashSet<aTask> tasks;
+        Dictionary<string, aTask> tasks;
 
         public aClass(string s)
         {
             name = s;
+            tasks = new Dictionary<string, aTask>();
         }
 
         // Adds task to tasks. Returns true if successful
-        public bool AddTask(aTask task)
+        public bool AddTask(string taskName, string month, string day, string year, string description)
         {
-            if (!tasks.Contains(task))
+            if (!tasks.ContainsKey(taskName))
             {
-                tasks.Add(task);
+                aTask task = new aTask(taskName, month, day, year, description);
+                tasks.Add(taskName, task);
                 return true;
             }
             else return false;
+        }
+
+        public aTask GetTask(string taskName)
+        {
+            aTask task;
+            if (tasks.TryGetValue(taskName, out task)) return task;
+            else return null;
         }
     }
 }

@@ -25,7 +25,6 @@ namespace ToDoList
         public HomePage()
         {
             InitializeComponent();
-
         }
 
 
@@ -60,7 +59,6 @@ namespace ToDoList
                 {
                     Button button = new Button
                     {
-                        
                         Content = addClassWindow.ClassName,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
                         FontWeight = FontWeights.Bold,

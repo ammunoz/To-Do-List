@@ -139,9 +139,10 @@ namespace ToDoList
             classPage.SetTitle(title);
         }
 
-        public void SetTaskTitle(String title)
+
+        public void PopulateInfo(string taskTitle, string classTitle)
         {
-            taskPage.SetTitle(title);
+            taskPage.PopulateInfo(taskTitle, classTitle);
         }
 
 
@@ -171,6 +172,13 @@ namespace ToDoList
                 return true;
             }
             else return false;
+        }
+
+        public aClass GetClass(string className)
+        {
+            aClass aclass;
+            if (classes.TryGetValue(className, out aclass)) return aclass;
+            else return null;
         }
     }
 }
