@@ -5,18 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ToDoList"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="250">
+             d:DesignHeight="568" d:DesignWidth="320">
     <Grid Background="White">
-        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="24" Margin="55,123,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="24" Margin="55,174,0,0" VerticalAlignment="Top" Width="120" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus"/>
-        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" Margin="55,174,0,0" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="75,230,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Click="button_Click"/>
-        <Label x:Name="label" Content="First time?" HorizontalAlignment="Left" Margin="55,273,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="registerLabel" HorizontalAlignment="Left" Margin="120,273,0,0" VerticalAlignment="Top" FontStyle="Italic" MouseDown="registerLabel_MouseDown" Foreground="#FF0924A0">
-            <TextBlock TextDecorations="Underline">Sign up</TextBlock>
+        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="44" Margin="96,269,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="127" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" FontSize="24"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="40" Margin="96,320,0,0" VerticalAlignment="Top" Width="127" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" FontSize="24"/>
+        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" Margin="96,318,0,0" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" FontSize="24"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Margin="116,380,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.06,-0.25" Click="button_Click" FontSize="24"/>
+        <Label x:Name="label" Content="First time?" HorizontalAlignment="Left" Margin="52,457,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="registerLabel" HorizontalAlignment="Left" Margin="171,457,0,0" VerticalAlignment="Top" FontStyle="Italic" MouseDown="registerLabel_MouseDown" Foreground="#FF0924A0" FontSize="24">
+            <TextBlock TextDecorations="Underline" FontSize="24">Sign up</TextBlock>
         </Label>
 
         <!-- IMAGE -->
-        <Image Source ="Images/to-do-symbol.jpg"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="69,10,0,0"/>
+        <Image Source ="Images/to-do-symbol.jpg"  HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="178" Margin="82,72,60,0" RenderTransformOrigin="0,0.52"/>
     </Grid>
 </UserControl>

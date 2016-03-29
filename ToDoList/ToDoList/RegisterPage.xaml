@@ -4,15 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="250">
+             d:DesignHeight="568" d:DesignWidth="320">
     <Canvas Background="White">
-        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="55" Canvas.Top="200"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="120" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="55" Canvas.Top="238"/>
-        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="55" Canvas.Top="238"/>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Canvas.Left="150" Canvas.Top="286" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.06,-0.25" Canvas.Left="10" Canvas.Top="286" Click="button_Copy_Click"/>
-        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="55" Canvas.Top="125"/>
-        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="120" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="55" Canvas.Top="162"/>
+        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="176" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="78" Canvas.Top="288" FontSize="24"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="176" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="78" Canvas.Top="341"/>
+        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="78" Canvas.Top="333" FontSize="24"/>
+        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="168" Canvas.Top="444" Click="button_Click" FontSize="24"/>
+        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="26" Canvas.Top="444" Click="button_Copy_Click" FontSize="24"/>
+        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="176" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="78" Canvas.Top="172" FontSize="24"/>
+        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="176" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="78" Canvas.Top="229" FontSize="24"/>
+        <Image x:Name="sign_up" Source ="Images/sign-up.png" Height="127" Canvas.Left="78" Canvas.Top="10" Width="166"/>
 
     </Canvas>
 </UserControl>
