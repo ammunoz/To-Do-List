@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="568" d:DesignWidth="320">
-    <Canvas Background="White">
-        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="176" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="78" Canvas.Top="288" FontSize="24"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="176" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="78" Canvas.Top="341"/>
+    <Canvas Background="#FF6DDEFF">
+        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="176" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="78" Canvas.Top="288" FontSize="24" BorderThickness="3"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="176" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="78" Canvas.Top="341" BorderThickness="3"/>
         <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="78" Canvas.Top="333" FontSize="24"/>
         <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="168" Canvas.Top="444" Click="button_Click" FontSize="24"/>
         <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="26" Canvas.Top="444" Click="button_Copy_Click" FontSize="24"/>
-        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="176" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="78" Canvas.Top="172" FontSize="24"/>
-        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="176" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="78" Canvas.Top="229" FontSize="24"/>
+        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="176" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="78" Canvas.Top="172" FontSize="24" Background="#FFD1F0F9" BorderThickness="3"/>
+        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="176" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="78" Canvas.Top="229" FontSize="24" BorderThickness="3"/>
         <Image x:Name="sign_up" Source ="Images/sign-up.png" Height="127" Canvas.Left="78" Canvas.Top="10" Width="166"/>
 
     </Canvas>

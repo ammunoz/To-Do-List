@@ -21,7 +21,7 @@ namespace ToDoList
     public partial class HomePage : UserControl
     {
         MainWindow w;
-
+        BrushConverter bc = new BrushConverter();
         public HomePage()
         {
             InitializeComponent();
@@ -60,10 +60,14 @@ namespace ToDoList
                     Button button = new Button
                     {
                         Content = addClassWindow.ClassName,
+                        FontSize = 30,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
                         FontWeight = FontWeights.Bold,
                         Background = Brushes.White,
-                        BorderThickness = new System.Windows.Thickness(0)
+                        BorderThickness = new System.Windows.Thickness(2),
+                        BorderBrush = (Brush)bc.ConvertFrom("#FF8EE3FC"),
+                        Foreground = (Brush)bc.ConvertFrom("#FF8EE3FC"),
+                        Height = 75
                     };
                     button.Click += new RoutedEventHandler(classButton_Click);
                     

@@ -68,3 +68,4 @@ C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\TaskWindo
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\ToDoList.g.resources
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\ToDoList.Properties.Resources.resources
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.Cache
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
