@@ -22,6 +22,7 @@ namespace ToDoList
     {
 
         MainWindow w;
+		BrushConverter bc = new BrushConverter();
         string month, day, year, d;
         
         // class data
@@ -70,12 +71,16 @@ namespace ToDoList
                     d = addTaskWindow.description.Text;
                     Button button = new Button
                     {
-
+						
                         Content = addTaskWindow.TaskName,
+						FontSize = 30,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
                         FontWeight = FontWeights.Bold,
                         Background = Brushes.White,
-                        BorderThickness = new System.Windows.Thickness(0)
+                        BorderThickness = new System.Windows.Thickness(2),
+                        BorderBrush = (Brush)bc.ConvertFrom("#FF8EE3FC"),
+                        Foreground = (Brush)bc.ConvertFrom("#FF8EE3FC"),
+                        Height = 75
                     };
                     button.Click += new RoutedEventHandler(taskButton_Click);
 

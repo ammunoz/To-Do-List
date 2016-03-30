@@ -22,7 +22,7 @@
             <MenuItem x:Name="menuLabel" Height="36" Width="106.6" Foreground="#FF9DE6FB">
                 <!-- MOVABLE HEADER -->
                 <MenuItem.Header>
-                    <TextBlock Text="  ≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Margin="29,0,-29,0" FontSize="24"/>
+                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" FontSize="24" Width="92.416" Height="36.923" TextAlignment="Center"/>
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
@@ -34,7 +34,7 @@
             </MenuItem>
             <MenuItem  Height="36" Width="106.6" Background="{x:Null}" IsEnabled="False" Foreground="#FF9DE6FB">
                 <MenuItem.Header>
-                    <TextBlock x:Name="Title" VerticalAlignment="Bottom" RenderTransformOrigin="0.769,0.5" Height="26" HorizontalAlignment="Right" FontSize="18.667" FontFamily="Cooper Black" FontWeight="Bold" TextAlignment="Center">
+                    <TextBlock x:Name="Title" VerticalAlignment="Bottom" RenderTransformOrigin="0.769,0.5" Height="34.333" HorizontalAlignment="Right" FontSize="18.667" FontFamily="Cooper Black" FontWeight="Bold" TextAlignment="Center" Width="55.773">
                         <TextBlock.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -48,7 +48,7 @@
             <!-- TITLE -->
             <MenuItem  Height="36" Width="106.6" Foreground="#FF9DE6FB">
                 <MenuItem.Header>
-                    <TextBlock Text="      +" VerticalAlignment="Center"  FontSize="24" FontWeight="Bold"/>
+                    <TextBlock Text="+" VerticalAlignment="Center"  FontSize="24" FontWeight="Bold" Width="92.637" TextAlignment="Center" Height="39.256"/>
                 </MenuItem.Header>
 
                 <MenuItem x:Name="addClassButton" Header="Add Class" MouseDown="MenuItem_MouseDown" Click="addClassButton_Click" FontSize="24"  />

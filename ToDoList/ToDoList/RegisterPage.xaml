@@ -5,15 +5,277 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="568" d:DesignWidth="320">
-    <Canvas Background="#FF6DDEFF">
-        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="176" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="78" Canvas.Top="288" FontSize="24" BorderThickness="3"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="176" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="78" Canvas.Top="341" BorderThickness="3"/>
-        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="78" Canvas.Top="333" FontSize="24"/>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="168" Canvas.Top="444" Click="button_Click" FontSize="24"/>
-        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="26" Canvas.Top="444" Click="button_Copy_Click" FontSize="24"/>
-        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="176" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="78" Canvas.Top="172" FontSize="24" Background="#FFD1F0F9" BorderThickness="3"/>
-        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="176" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="78" Canvas.Top="229" FontSize="24" BorderThickness="3"/>
-        <Image x:Name="sign_up" Source ="Images/sign-up.png" Height="127" Canvas.Left="78" Canvas.Top="10" Width="166"/>
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+		<SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+		<SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+		<Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="AllowDrop" Value="true"/>
+			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TextBox}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="10">
+							<ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Opacity" TargetName="border" Value="0.56"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+						<Condition Property="IsSelectionActive" Value="false"/>
+					</MultiTrigger.Conditions>
+					<Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+				</MultiTrigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="TextBoxStyle2" TargetType="{x:Type TextBox}">
+			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="AllowDrop" Value="true"/>
+			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TextBox}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="10">
+							<ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Opacity" TargetName="border" Value="0.56"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+						<Condition Property="IsSelectionActive" Value="false"/>
+					</MultiTrigger.Conditions>
+					<Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+				</MultiTrigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="TextBoxStyle3" TargetType="{x:Type TextBox}">
+			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="AllowDrop" Value="true"/>
+			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TextBox}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="10">
+							<ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Opacity" TargetName="border" Value="0.56"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+						<Condition Property="IsSelectionActive" Value="false"/>
+					</MultiTrigger.Conditions>
+					<Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+				</MultiTrigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="PasswordBoxStyle1" TargetType="{x:Type PasswordBox}">
+			<Setter Property="PasswordChar" Value="●"/>
+			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="AllowDrop" Value="true"/>
+			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type PasswordBox}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="10">
+							<ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Opacity" TargetName="border" Value="0.56"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+						<Condition Property="IsSelectionActive" Value="false"/>
+					</MultiTrigger.Conditions>
+					<Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+				</MultiTrigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="FocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+		<SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+		<SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+		<SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+		<SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+		<SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+		<SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+		<Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+							<ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsDefaulted" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+								<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+							<ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsDefaulted" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+								<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+    <Canvas Background="#FF9DE6FB">
+        <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="176" GotFocus="usernameBox_GotFocus" LostFocus="usernameBox_LostFocus" Canvas.Left="78" Canvas.Top="288" FontSize="24" BorderThickness="3" Style="{DynamicResource TextBoxStyle3}" BorderBrush="{x:Null}" Foreground="#FF9DE6FB"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="176" Background="White" ToolTip="Password" IsHitTestVisible="True" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Canvas.Left="78" Canvas.Top="341" BorderThickness="3" Style="{DynamicResource PasswordBoxStyle1}" BorderBrush="{x:Null}"/>
+        <Label x:Name="passwordLabel" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" GotFocus="passwordLabel_GotFocus" MouseDown="passwordLabel_MouseDown" Canvas.Left="78" Canvas.Top="339.076" FontSize="24" Foreground="#FF9DE6FB"/>
+        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="176" Canvas.Top="444" Click="button_Click" FontSize="24" Style="{DynamicResource ButtonStyle2}" Background="White" BorderBrush="{x:Null}" Foreground="#FF9DE6FB"/>
+        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.06,-0.25" Canvas.Left="36" Canvas.Top="444" Click="button_Copy_Click" FontSize="24" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Foreground="#FF9DE6FB" Background="White"/>
+        <TextBox x:Name="firstNameBox" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="176" GotFocus="firstNameBox_GotFocus" LostFocus="firstNameBox_LostFocus" Canvas.Left="78" Canvas.Top="172" FontSize="24" Background="White" BorderThickness="3" Style="{DynamicResource TextBoxStyle1}" Foreground="#FF9DE6FB" BorderBrush="{x:Null}"/>
+        <TextBox x:Name="lastNameBox" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="176" GotFocus="lastNameBox_GotFocus" LostFocus="lastNameBox_LostFocus" Canvas.Left="78" Canvas.Top="229" FontSize="24" BorderThickness="3" Style="{DynamicResource TextBoxStyle2}" BorderBrush="{x:Null}" Foreground="#FF9DE6FB"/>
+        <Image x:Name="sign_up" Source ="Images/sign-up.png" Height="127" Canvas.Left="88" Canvas.Top="10" Width="166"/>
 
     </Canvas>
 </UserControl>

@@ -7,21 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="568" d:DesignWidth="320">
     <Grid Background="White">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="146*"/>
+    		<ColumnDefinition Width="175*"/>
+    	</Grid.ColumnDefinitions>
 
-        <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="272" Margin="0,36,0,0" VerticalAlignment="Top" Width="234">
-            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="267" Margin="0,41,0,0" VerticalAlignment="Top" Width="240">
-            </StackPanel>
+        <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="532" Margin="0,36,0,0" VerticalAlignment="Top" Width="320" Background="#FF9DE6FB" Grid.ColumnSpan="2">
+            <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="532" VerticalAlignment="Top" Width="303"/>
         </ScrollViewer>
 
 
 
         <!-- MENU BAR -->
-        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="36">
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="36" Background="White" Grid.ColumnSpan="2">
             <!-- TRIPLE BAR -->
-            <MenuItem x:Name="menuLabel" Height="36" Width="83" >
+            <MenuItem x:Name="menuLabel" Height="36" Width="106.6" >
                 <!-- MOVABLE HEADER -->
                 <MenuItem.Header>
-                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Margin="29,0,-29,0"/>
+                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" FontSize="24" Foreground="#FF9DE6FB" Width="95.417" TextAlignment="Center"/>
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
@@ -33,22 +36,22 @@
                 <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click"  />
             </MenuItem>
             <!-- TITLE -->
-            <MenuItem  Height="36" Width="83">
+            <MenuItem  Height="36" Width="106.6">
                 <MenuItem.Header>
-                    <TextBlock x:Name="Title" Text="Class" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Height="16" Margin="10,0,-11,0"/>
+                    <TextBlock x:Name="Title" Text="Class" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" Height="23" FontSize="18.667" Width="93.6" TextAlignment="Center" FontFamily="Cooper Black" Foreground="#FF9DE6FB"/>
                 </MenuItem.Header>
             </MenuItem>
             <!-- ADD -->
-            <MenuItem  Height="36" Width="83">
+            <MenuItem  Height="36" Width="106.6">
                 <MenuItem.Header>
-                    <TextBlock Text="+" VerticalAlignment="Center" Margin="32,0,-32,0"/>
+                    <TextBlock Text="+" VerticalAlignment="Center" FontSize="24" Foreground="#FF9DE6FB" Width="95.417" TextAlignment="Center"/>
                 </MenuItem.Header>
 
                 <MenuItem x:Name="addClassButton" Header="Add Task" Click="addClassButton_Click"  />
 
             </MenuItem>
         </Menu>
-        <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
+        <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="74.856,41,57.356,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
