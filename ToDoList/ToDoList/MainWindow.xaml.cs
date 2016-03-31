@@ -181,5 +181,11 @@ namespace ToDoList
             if (classes.TryGetValue(className, out aclass)) return aclass;
             else return aclass;
         }
+
+        public bool ContainsTask(string s)
+        {
+            if (tasks.ContainsKey(s)) return true;
+            else return false;
+        }
     }
 }

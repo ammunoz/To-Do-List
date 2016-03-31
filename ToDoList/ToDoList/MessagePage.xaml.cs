@@ -22,16 +22,37 @@ namespace ToDoList
     {
 
         MainWindow w;
-
+        List<String> messages;
         public MessagePage()
         {
             InitializeComponent();
+            messages = new List<String>();
+            messages.Add("Okay!");
+            messages.Add("I'm just about done!");
+            messages.Add("Uhh.. Later");
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = Window.GetWindow(this) as MainWindow;
             w.ShowPrevPage();
+        }
+
+        private bool RefersToTask(String st) {
+            MainWindow w = Window.GetWindow(this) as MainWindow;
+            string[] ss = st.Split(' ');
+            foreach (string s in ss) {
+                if (s[0] != '@') continue;
+                else {
+                    if (w.ContainsTask(s.Substring(1))) return true;
+                }
+            }
+            return true;
+        }
+
+        private string PickMessage() {
+            Random r = new Random();
+            return messages[r.Next(0, messages.Count)];
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
@@ -51,8 +72,25 @@ namespace ToDoList
             };
 			
 			myBorder.Child = myLabel;
+            if (RefersToTask(MessageBox.Text)) Title.Text = "TRUE";
 			
 			MessagePanel.Children.Add(myBorder);
+
+            Border mBorder = new Border
+            {
+                BorderBrush = Brushes.Black,
+                Background = Brushes.White,
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(10),
+            };
+            Label label = new Label
+            {
+                Content = PickMessage(),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = 14
+            };
+            mBorder.Child = label;
+            MessagePanel.Children.Add(mBorder);
 			
             /*MessagePanel.Children.Add(new Label
             {
