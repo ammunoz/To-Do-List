@@ -11,7 +11,7 @@ namespace ToDoList
     {
         string name;
         ConcurrentDictionary<string, aTask> tasks;
-
+        
         public aClass(string s)
         {
             name = s;

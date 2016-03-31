@@ -38,16 +38,47 @@ namespace ToDoList
             w.ShowPrevPage();
         }
 
-        private bool RefersToTask(String st) {
+        private bool RefersToTask(string st) {
+
+            // future use? 	Substring(Int32, Int32) (start, end)
             MainWindow w = Window.GetWindow(this) as MainWindow;
+
+           string check = "";
+
+            bool a = false;
+
+            for(int i = 0; i < st.Length; i++)
+            {
+                if (st[i] == '@' && !a)
+                {
+                    a = true;
+                }
+                else if (a && st[i] != ' ') {
+                    check += st[i];
+                }else if(a && st[i] == ' ')
+                {
+                    break;
+                }
+
+            }
+
+            Title.Text = check;
+            return w.ContainsTask(check);
+
+
+            /*
             string[] ss = st.Split(' ');
             foreach (string s in ss) {
-                if (s[0] != '@') continue;
-                else {
-                    if (w.ContainsTask(s.Substring(1))) return true;
+                if (s[0] != '@') { continue; }
+                else
+                {
+                    if (w.ContainsTask(s.Substring(1)))
+                    {
+                        return true;
+                    }
                 }
             }
-            return true;
+            return false;*/
         }
 
         private string PickMessage() {

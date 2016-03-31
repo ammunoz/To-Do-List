@@ -145,3 +145,5 @@ D:\CPSC481\ToDoList\ToDoList\obj\Debug\TaskWindow.baml
 D:\CPSC481\ToDoList\ToDoList\obj\Debug\ToDoList.g.resources
 D:\CPSC481\ToDoList\ToDoList\obj\Debug\ToDoList.Properties.Resources.resources
 D:\CPSC481\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.Cache
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\roundedLabel.baml
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\App.baml
