@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ControlTemplate x:Key="LabelControlTemplate1" TargetType="{x:Type Label}">
+		<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20"/>
+	</ControlTemplate>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

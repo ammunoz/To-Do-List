@@ -5,5 +5,16 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="roundedLabel.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+         
+    		<ControlTemplate x:Key="RoundLabel" TargetType="{x:Type Label}">
+    			<Grid/>
+    		</ControlTemplate>
+         
+    	</ResourceDictionary>
+         
     </Application.Resources>
 </Application>

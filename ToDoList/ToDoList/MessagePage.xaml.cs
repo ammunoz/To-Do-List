@@ -36,11 +36,31 @@ namespace ToDoList
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            MessagePanel.Children.Add(new Label
+			Border myBorder = new Border{
+				BorderBrush = Brushes.Black,
+				Background = Brushes.White,
+				BorderThickness = new Thickness(1),
+				CornerRadius = new CornerRadius(10),
+				
+			};
+			Label myLabel = new Label{
+                Content = MessageBox.Text,
+                HorizontalAlignment = HorizontalAlignment.Right,
+				FontSize = 14,
+				
+            };
+			
+			myBorder.Child = myLabel;
+			
+			MessagePanel.Children.Add(myBorder);
+			
+            /*MessagePanel.Children.Add(new Label
             {
                 Content = MessageBox.Text,
                 HorizontalAlignment = HorizontalAlignment.Right,
-            });
+				FontSize = 30,
+				
+            });*/
             MessageBox.Text = "";
             MessageBox.Focus();
         }
