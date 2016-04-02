@@ -104,6 +104,7 @@ namespace ToDoList
         private void member_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
+            w.SetCurClass(Title.Text);
             w.ShowMember();
         }
     }

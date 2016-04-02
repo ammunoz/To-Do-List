@@ -36,7 +36,7 @@ namespace ToDoList
         Stack<UserControl> pageStack = new Stack<UserControl>();
         ConcurrentDictionary<string, string> accounts = new ConcurrentDictionary<string, string>();
         ConcurrentDictionary<string, aClass> classes = new ConcurrentDictionary<string, aClass>();
-        ConcurrentDictionary<string, aTask> tasks  = new ConcurrentDictionary<string, aTask>();
+        //ConcurrentDictionary<string, aTask> tasks  = new ConcurrentDictionary<string, aTask>();
 
 
         public MainWindow()
@@ -140,6 +140,10 @@ namespace ToDoList
             classPage.SetTitle(title);
         }
 
+        public void SetCurClass(String title)
+        {
+            message.CurClass = title;
+        }
 
         public void PopulateInfo(string taskTitle, string classTitle, string month, string day, string year, string d)
         {
@@ -184,7 +188,7 @@ namespace ToDoList
 
         public bool ContainsTask(string s)
         {
-            if (tasks.ContainsKey(s)) return true;
+            if (GetClass(message.CurClass).GetTask(s) != null) return true;
             else return false;
         }
     }

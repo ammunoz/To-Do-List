@@ -23,6 +23,14 @@ namespace ToDoList
 
         MainWindow w;
         List<String> messages;
+        string curClass;
+        public string CurClass
+        {
+            get { return this.curClass; }
+            set { this.curClass = value; }
+        }
+
+
         public MessagePage()
         {
             InitializeComponent();
@@ -103,7 +111,7 @@ namespace ToDoList
             };
 			
 			myBorder.Child = myLabel;
-            if (RefersToTask(MessageBox.Text)) Title.Text = "TRUE";
+            
 			
 			MessagePanel.Children.Add(myBorder);
 
@@ -122,7 +130,9 @@ namespace ToDoList
             };
             mBorder.Child = label;
             MessagePanel.Children.Add(mBorder);
-			
+
+            if (RefersToTask(MessageBox.Text)) Title.Text = "TRUE";
+
             /*MessagePanel.Children.Add(new Label
             {
                 Content = MessageBox.Text,
