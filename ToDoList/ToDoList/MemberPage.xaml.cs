@@ -20,7 +20,7 @@ namespace ToDoList
     /// </summary>
     public partial class MemberPage : UserControl
     {
-        
+        public string CurClass;
 
         public MemberPage()
         {
@@ -36,9 +36,56 @@ namespace ToDoList
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = Window.GetWindow(this) as MainWindow;
-            w.ShowMessagePage();
+            Button b = (Button)sender;
+            w.ShowMessagePage(b.Content.ToString());
         }
 
-        
+        public void DisplayMembers()
+        {
+            var bc = new BrushConverter();
+            Button b = new Button
+            {
+                Content = "Class Chat",
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Width = 280,
+                Height = 75,
+                FontSize = 33,
+                Background = Brushes.White,
+            };
+            stack.Children.Add(b);
+        }
+        public void DisplayMembers(List<string> members)
+        {
+            stack.Children.Clear();
+            var bc = new BrushConverter();
+            Button b = new Button
+            {
+                Content = "Class Chat",
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Width = 280,
+                Height = 75,
+                FontSize = 33,
+                Background = Brushes.White,
+            };
+            stack.Children.Add(b);
+            foreach (string member in members)
+            {
+                b = new Button {
+                    Content = member,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Width = 280,
+                    Height = 75,
+                    FontSize = 33,
+                    Background = Brushes.White,
+                    Foreground = (Brush)bc.ConvertFrom("#FFA0E6FB"),
+
+                };
+                b.Click += new RoutedEventHandler(button_Click);
+                stack.Children.Add(b);
+            }
+        }
     }
 }

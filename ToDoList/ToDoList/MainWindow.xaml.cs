@@ -36,8 +36,6 @@ namespace ToDoList
         Stack<UserControl> pageStack = new Stack<UserControl>();
         ConcurrentDictionary<string, string> accounts = new ConcurrentDictionary<string, string>();
         ConcurrentDictionary<string, aClass> classes = new ConcurrentDictionary<string, aClass>();
-        //ConcurrentDictionary<string, aTask> tasks  = new ConcurrentDictionary<string, aTask>();
-
 
         public MainWindow()
         {
@@ -92,6 +90,15 @@ namespace ToDoList
             currentPage = member;
         }
 
+        public void ShowMember(string className)
+        {
+            member.DisplayMembers(GetClass(className).Members);
+            grid.Children.Clear();
+            grid.Children.Add(member);
+            pageStack.Push(member);
+            currentPage = member;
+        }
+
         public void ShowClassPage()
         {
             grid.Children.Clear();
@@ -116,7 +123,14 @@ namespace ToDoList
             currentPage = message;
         }
 
-
+        public void ShowMessagePage(string s)
+        {
+            grid.Children.Clear();
+            message.Title.Text = s;
+            grid.Children.Add(message);
+            pageStack.Push(message);
+            currentPage = message;
+        }
         public void ShowPrevPage()
         {
             if (pageStack.Count > 0)
@@ -143,6 +157,7 @@ namespace ToDoList
         public void SetCurClass(String title)
         {
             message.CurClass = title;
+            member.CurClass = title;
         }
 
         public void PopulateInfo(string taskTitle, string classTitle, string month, string day, string year, string d)

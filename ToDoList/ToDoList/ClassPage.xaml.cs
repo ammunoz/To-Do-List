@@ -106,7 +106,7 @@ namespace ToDoList
         {
             w = Window.GetWindow(this) as MainWindow;
             w.SetCurClass(Title.Text);
-            w.ShowMember();
+            w.ShowMember(Title.Text);
         }
     }
 

@@ -70,15 +70,9 @@ namespace ToDoList
                         Height = 75
                     };
                     button.Click += new RoutedEventHandler(classButton_Click);
-                    
                     classStackPanel.Children.Add(button);
                 }
-
-                // add the members
-                w.GetClass(addClassWindow.ClassName).members = addClassWindow.Members;
-
-                // test member
-                Title.Text = w.GetClass(addClassWindow.ClassName).members[1];
+                w.GetClass(addClassWindow.ClassName).Members = addClassWindow.Members;
             }
         }
 
@@ -89,10 +83,6 @@ namespace ToDoList
             string title = (sender as Button).Content.ToString();
             w.SetClassTitle(title);
             w.ShowClassPage();
-            // 1. Open Task create page - e.g., AddClassWindow
-            // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");
-            // 3. Add any members to aTask. e.g., task.AddMember(member1)
-            // 4. Add created aTask object to selected aClass. i.e., class.AddTask(aTask)
         }
 
     }

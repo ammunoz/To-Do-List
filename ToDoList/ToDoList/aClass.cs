@@ -11,8 +11,8 @@ namespace ToDoList
     {
         string name;
         ConcurrentDictionary<string, aTask> tasks;
-        public List<string> members;
-             
+        List<string> members;
+
         public aClass(string s)
         {
             name = s;
@@ -43,5 +43,11 @@ namespace ToDoList
         {
             return tasks.ContainsKey(taskName);
         }
+
+        public List<string> Members{
+            get{ return members;}
+            set{ members = value;}
+        }
+
     }
 }

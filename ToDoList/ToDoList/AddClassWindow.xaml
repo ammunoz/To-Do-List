@@ -269,9 +269,21 @@
         <TextBox x:Name="addClassBox" Height="36" Canvas.Left="10" TextWrapping="Wrap" Text="Class Name" Canvas.Top="10" Width="211.5" GotFocus="addClassBox_GotFocus" LostFocus="addClassBox_LostFocus" FontSize="18.667" Style="{DynamicResource TextBoxStyle1}"/>
         <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="146.5" Canvas.Top="188.67" Width="75" MouseDown="doneButton_MouseDown" Click="doneButton_Click" FontSize="18.667" Style="{DynamicResource ButtonStyle2}"/>
         <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="10" Canvas.Top="188.67" Width="75" FontSize="18.667" Style="{DynamicResource ButtonStyle1}"/>
-        <TextBox x:Name="member1" Height="23" Canvas.Left="10" TextWrapping="Wrap" Text="Member 1" Canvas.Top="92.333" Width="211.5" FontSize="16" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBox x:Name="member2" Height="23" Canvas.Left="10" TextWrapping="Wrap" Text="Member 2" Canvas.Top="120.333" Width="211.5" FontSize="16" Style="{DynamicResource TextBoxStyle3}"/>
-        <TextBox x:Name="member3" Height="23" Canvas.Left="10" TextWrapping="Wrap" Text="Member 3" Canvas.Top="148.333" Width="211.5" FontSize="16" Style="{DynamicResource TextBoxStyle4}"/>
         <Label x:Name="label" Content="Members:" Canvas.Left="10" Canvas.Top="61.373"/>
+        <ScrollViewer x:Name="scroll" Height="100" Canvas.Left="17" Canvas.Top="84" Width="204">
+            <StackPanel x:Name="memberList" Height="100" Width="185">
+                <CheckBox HorizontalAlignment="Left" Width="85">
+                    <TextBlock FlowDirection="LeftToRight" Text="Member 1"/>
+                </CheckBox>
+                <CheckBox  HorizontalAlignment="Left" Width="85">
+                    <TextBlock FlowDirection="LeftToRight" Text="Member 2"/>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left" Width="85">
+                    <TextBlock FlowDirection="LeftToRight" Text="Member 3"/>
+                </CheckBox>
+                
+            </StackPanel>
+
+        </ScrollViewer>
     </Canvas>
 </Window>
