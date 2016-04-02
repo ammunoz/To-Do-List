@@ -45,9 +45,37 @@ namespace ToDoList
             addClassBox.Focus();
         }
 
+        //returns class name
         public string ClassName
         {
             get { return addClassBox.Text; }
+        }
+
+        //returns members
+        public List<string> Members
+        {
+            get {
+                List<string> members = new List<string>();
+
+                // dumb if cases 
+                if(/*member1.Text != "Member 1" ||*/ member1.Text != "" )
+                {
+                    members.Add(member1.Text);
+                }
+
+                if (/*member2.Text != "Member 2" || */member2.Text != "")
+                {
+                    members.Add(member2.Text);
+                }
+
+                if (/*member2.Text != "Member 3" || */member3.Text != "")
+                {
+                    members.Add(member3.Text);
+                }
+
+
+                return members;
+            }
         }
 
         private void doneButton_Click(object sender, RoutedEventArgs e)

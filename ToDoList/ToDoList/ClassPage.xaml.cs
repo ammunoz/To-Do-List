@@ -93,6 +93,7 @@ namespace ToDoList
         {
             w = Window.GetWindow(this) as MainWindow;
             string title = (sender as Button).Content.ToString();
+            w.SetCurClass(Title.Text);
             w.PopulateInfo(title, Title.Text, month, day, year, d);
             w.ShowTaskPage();
             // 1. Open Task create page - e.g., AddClassWindow

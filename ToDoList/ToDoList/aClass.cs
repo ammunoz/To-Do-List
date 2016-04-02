@@ -11,11 +11,13 @@ namespace ToDoList
     {
         string name;
         ConcurrentDictionary<string, aTask> tasks;
-        
+        public List<string> members;
+             
         public aClass(string s)
         {
             name = s;
             tasks = new ConcurrentDictionary<string, aTask>();
+            members = new List<string>();
         }
 
         // Adds task to tasks. Returns true if successful

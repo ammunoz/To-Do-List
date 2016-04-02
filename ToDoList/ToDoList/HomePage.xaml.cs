@@ -73,6 +73,12 @@ namespace ToDoList
                     
                     classStackPanel.Children.Add(button);
                 }
+
+                // add the members
+                w.GetClass(addClassWindow.ClassName).members = addClassWindow.Members;
+
+                // test member
+                Title.Text = w.GetClass(addClassWindow.ClassName).members[1];
             }
         }
 
