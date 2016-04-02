@@ -36,5 +36,10 @@ namespace ToDoList
             if (tasks.TryGetValue(taskName, out task)) return task;
             else return null;
         }
+
+        public bool ContainsTask(string taskName)
+        {
+            return tasks.ContainsKey(taskName);
+        }
     }
 }

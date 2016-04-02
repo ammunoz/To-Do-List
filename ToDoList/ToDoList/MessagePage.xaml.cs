@@ -24,20 +24,18 @@ namespace ToDoList
         MainWindow w;
         List<String> messages;
         string curClass;
+        string curTask;
         public string CurClass
         {
             get { return this.curClass; }
             set { this.curClass = value; }
         }
 
-
         public MessagePage()
         {
             InitializeComponent();
             messages = new List<String>();
-            messages.Add("Okay!");
-            messages.Add("I'm just about done!");
-            messages.Add("Uhh.. Later");
+            AddDefaultMessages();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -70,25 +68,21 @@ namespace ToDoList
 
             }
 
-            Title.Text = check;
-            return w.ContainsTask(check);
-
-
-            /*
-            string[] ss = st.Split(' ');
-            foreach (string s in ss) {
-                if (s[0] != '@') { continue; }
-                else
-                {
-                    if (w.ContainsTask(s.Substring(1)))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;*/
+            bool b = w.GetClass(CurClass).ContainsTask(check);
+            if (b) curTask = check;
+            return b;
         }
 
+        private void AddDefaultMessages()
+        {
+            messages.Add("Okay!");
+            messages.Add("I'm just about done!");
+            messages.Add("Uhh.. Later");
+        }
+        private void AddPossibleMessage(string s)
+        {
+            messages.Add(s);
+        }
         private string PickMessage() {
             Random r = new Random();
             return messages[r.Next(0, messages.Count)];
@@ -131,17 +125,21 @@ namespace ToDoList
             mBorder.Child = label;
             MessagePanel.Children.Add(mBorder);
 
-            if (RefersToTask(MessageBox.Text)) Title.Text = "TRUE";
-
-            /*MessagePanel.Children.Add(new Label
+            if (RefersToTask(MessageBox.Text))
             {
-                Content = MessageBox.Text,
-                HorizontalAlignment = HorizontalAlignment.Right,
-				FontSize = 30,
-				
-            });*/
+                myLabel.MouseDown += new MouseButtonEventHandler(TaskMessage_MouseDown);
+            }
             MessageBox.Text = "";
             MessageBox.Focus();
+        }
+
+        void TaskMessage_MouseDown(object sender, MouseEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            aTask task = w.GetClass(CurClass).GetTask(curTask);
+            string[] info = task.GetInfo();
+            w.PopulateInfo(curTask, curClass, info[0], info[1], info[2], info[3]);
+            w.ShowTaskPage();
         }
     }
 }
