@@ -26,11 +26,11 @@
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
-                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" />
-                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" />
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" Foreground="Black" />
+                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" Foreground="Black" />
+                <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" Foreground="Black" />
                 <Separator HorizontalAlignment="Left" Width="140"/>
-                <MenuItem x:Name="Back" Header="Close" HorizontalAlignment="Left" Width="140" Click="Close_Click"  />
+                <MenuItem x:Name="Back" Header="Close" HorizontalAlignment="Left" Width="140" Click="Close_Click" Foreground="Black"  />
             </MenuItem>
             <MenuItem  Height="36" Width="106.6" Background="{x:Null}" IsEnabled="False" Foreground="#FF9DE6FB">
                 <MenuItem.Header>
@@ -51,7 +51,7 @@
                     <TextBlock Text="+" VerticalAlignment="Center"  FontSize="24" FontWeight="Bold" Width="92.637" TextAlignment="Center" Height="39.256"/>
                 </MenuItem.Header>
 
-                <MenuItem x:Name="addClassButton" Header="Add Class" MouseDown="MenuItem_MouseDown" Click="addClassButton_Click" FontSize="24"  />
+                <MenuItem x:Name="addClassButton" Header="Add Class" MouseDown="MenuItem_MouseDown" Click="addClassButton_Click" FontSize="24" Foreground="Black"  />
 
             </MenuItem>
             <!-- ADD -->

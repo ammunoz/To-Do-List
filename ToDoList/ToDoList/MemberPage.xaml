@@ -110,10 +110,17 @@
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Place Holder 1" HorizontalAlignment="Left" Width="140" />
-                <MenuItem Header="Place Holder 2" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Place Holder 1" HorizontalAlignment="Left" Width="140" Foreground="Black" />
+                <MenuItem Header="Place Holder 2" HorizontalAlignment="Left" Width="140" Foreground="Black" />
                 <Separator HorizontalAlignment="Left" Width="140"/>
-                <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click"  />
+                <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click"  >
+                    <MenuItem.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </MenuItem.Foreground>
+                </MenuItem>
             </MenuItem>
             <!-- TITLE -->
             <MenuItem  Height="50" Width="106.6" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA0E6FB">
@@ -127,7 +134,7 @@
                     <TextBlock Text="+" VerticalAlignment="Center" Foreground="#FFA0E6FB" Width="90.21" Height="49.96" FontSize="33.333" TextAlignment="Center"/>
                 </MenuItem.Header>
 
-                <MenuItem Header="Add Member"  />
+                <MenuItem Header="Add Member" Foreground="Black"  />
 
             </MenuItem>
         </Menu>

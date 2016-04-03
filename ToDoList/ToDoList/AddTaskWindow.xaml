@@ -6,16 +6,110 @@
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
         Title="Add Task" Height="300" Width="250">
-    <Canvas>
-        <TextBox x:Name="addTaskBox" Height="23" Canvas.Left="10" TextWrapping="Wrap" Text="Task Name" Canvas.Top="23" Width="222" GotFocus="addTaskBox_GotFocus" LostFocus="addTaskBox_LostFocus" />
-        <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="157" Canvas.Top="239" Width="75" Click="doneButton_Click" />
-        <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="10" Canvas.Top="239" Width="75"/>
-        <ComboBox x:Name="comboBox" Text="Members"  Canvas.Left="10" Canvas.Top="51" Width="222" IsEditable="True" >
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Canvas Background="#FFA0E6FB">
+        <TextBox x:Name="addTaskBox" Height="28" Canvas.Left="10" TextWrapping="Wrap" Text="Task Name" Canvas.Top="23" Width="210.334" GotFocus="addTaskBox_GotFocus" LostFocus="addTaskBox_LostFocus" BorderBrush="{x:Null}" FontSize="18.667" />
+        <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="145.334" Canvas.Top="225" Width="75" Click="doneButton_Click" Style="{DynamicResource ButtonStyle1}" Background="White" BorderBrush="{x:Null}" FontSize="18.667" />
+        <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="16.667" Canvas.Top="225" Width="75" Style="{DynamicResource ButtonStyle2}" BorderBrush="{x:Null}" Background="White" FontSize="18.667"/>
+        <ComboBox x:Name="comboBox" Text="Members"  Canvas.Left="10" Canvas.Top="55.04" Width="210.334" IsEditable="True" BorderBrush="{x:Null}" FontSize="18.667" >
             <ComboBoxItem Content="Member1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Member2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Member2" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Month" Text="Month" Canvas.Left="10" Canvas.Top="82" Width="88" IsEditable="True">
+        <ComboBox x:Name="Month" Text="Month" Canvas.Left="10" Canvas.Top="90.87" Width="75" IsEditable="True">
             <ComboBoxItem Content="January" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="February" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="March" HorizontalAlignment="Left" Width="118"/>
@@ -29,7 +123,7 @@
             <ComboBoxItem Content="November" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="December" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Day" Text="Day" Canvas.Left="103" Canvas.Top="82" Width="49" IsEditable="True">
+        <ComboBox x:Name="Day" Text="Day" Canvas.Left="90" Canvas.Top="90.87" Width="49" IsEditable="True">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="118"/>
@@ -42,13 +136,13 @@
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
 
-        <ComboBox x:Name="Year" Text="Year" Canvas.Left="157" Canvas.Top="82" Width="75" IsEditable="True">
+        <ComboBox x:Name="Year" Text="Year" Canvas.Left="144" Canvas.Top="90.87" Width="75" IsEditable="True">
             <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2018" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
 
-        <TextBox x:Name="description" Height="98" Canvas.Left="10" TextWrapping="Wrap" Text="Description" Canvas.Top="131" Width="222" GotFocus="description_GotFocus" LostFocus="description_LostFocus" />
+        <TextBox x:Name="description" Height="89" Canvas.Left="10" TextWrapping="Wrap" Text="Description" Canvas.Top="131" Width="210.334" GotFocus="description_GotFocus" LostFocus="description_LostFocus" BorderBrush="{x:Null}" FontSize="18.667" />
     </Canvas>
 </Window>

@@ -260,6 +260,7 @@ namespace ToDoList
             foreach (var m in members)
             {
                 MessagePage p = new MessagePage();
+                p.CurClass = c;
                 messages.TryAdd(m, p);
             }
         }

@@ -265,12 +265,12 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Canvas>
-        <TextBox x:Name="addClassBox" Height="36" Canvas.Left="10" TextWrapping="Wrap" Text="Class Name" Canvas.Top="10" Width="211.5" GotFocus="addClassBox_GotFocus" LostFocus="addClassBox_LostFocus" FontSize="18.667" Style="{DynamicResource TextBoxStyle1}"/>
-        <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="146.5" Canvas.Top="188.67" Width="75" MouseDown="doneButton_MouseDown" Click="doneButton_Click" FontSize="18.667" Style="{DynamicResource ButtonStyle2}"/>
-        <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="10" Canvas.Top="188.67" Width="75" FontSize="18.667" Style="{DynamicResource ButtonStyle1}"/>
+    <Canvas Background="#FFA0E6FB">
+        <TextBox x:Name="addClassBox" Height="29.333" Canvas.Left="10" TextWrapping="Wrap" Text="Class Name" Canvas.Top="27.04" Width="204" GotFocus="addClassBox_GotFocus" LostFocus="addClassBox_LostFocus" FontSize="18.667" Style="{DynamicResource TextBoxStyle1}" BorderBrush="{x:Null}"/>
+        <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="139" Canvas.Top="188.67" Width="75" MouseDown="doneButton_MouseDown" Click="doneButton_Click" FontSize="18.667" Style="{DynamicResource ButtonStyle2}" Background="White" BorderBrush="{x:Null}"/>
+        <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="10" Canvas.Top="188.67" Width="75" FontSize="18.667" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Background="White"/>
         <Label x:Name="label" Content="Members:" Canvas.Left="10" Canvas.Top="61.373"/>
-        <ScrollViewer x:Name="scroll" Height="100" Canvas.Left="17" Canvas.Top="84" Width="204">
+        <ScrollViewer x:Name="scroll" Height="100" Canvas.Left="10" Canvas.Top="83.67" Width="204" Background="White">
             <StackPanel x:Name="memberList" Height="100" Width="185">
                 <CheckBox HorizontalAlignment="Left" Width="85">
                     <TextBlock FlowDirection="LeftToRight" Text="Member 1"/>
@@ -281,7 +281,7 @@
                 <CheckBox HorizontalAlignment="Left" Width="85">
                     <TextBlock FlowDirection="LeftToRight" Text="Member 3"/>
                 </CheckBox>
-                
+
             </StackPanel>
 
         </ScrollViewer>
