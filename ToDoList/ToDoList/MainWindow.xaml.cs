@@ -206,5 +206,10 @@ namespace ToDoList
             if (GetClass(message.CurClass).GetTask(s) != null) return true;
             else return false;
         }
+
+        public void PokeMember(string task) {
+            message.Add_Poke(task);
+        }
+
     }
 }

@@ -30,9 +30,9 @@ namespace ToDoList
 
         public ClassPage()
         {
+
             InitializeComponent();
-
-
+           
         }
 
         public void SetTitle(String title) {
@@ -96,6 +96,7 @@ namespace ToDoList
             w.SetCurClass(Title.Text);
             w.PopulateInfo(title, Title.Text, month, day, year, d);
             w.ShowTaskPage();
+            
             // 1. Open Task create page - e.g., AddClassWindow
             // 2. Create aTask object with info from Task create page - aTask constructor takes string. e.g., aTask task = new aTask("task name");
             // 3. Add any members to aTask. e.g., task.AddMember(member1)

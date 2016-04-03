@@ -93,5 +93,11 @@ namespace ToDoList
             w = Window.GetWindow(this) as MainWindow;
             w.ShowPrevPage();
         }
+
+        private void Poke_Click(object sender, RoutedEventArgs e)
+        {
+            w = Window.GetWindow(this) as MainWindow;
+            w.PokeMember(Title.Text);
+        }
     }
 }

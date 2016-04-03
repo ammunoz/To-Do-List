@@ -33,9 +33,11 @@ namespace ToDoList
 
         public MessagePage()
         {
+            curClass = "";
             InitializeComponent();
             messages = new List<String>();
             AddDefaultMessages();
+        
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -88,8 +90,38 @@ namespace ToDoList
             return messages[r.Next(0, messages.Count)];
         }
 
+        public void Add_Poke(string task)
+        {
+            curTask = task;
+            Border myBorder = new Border
+            {
+                BorderBrush = Brushes.Black,
+                Background = Brushes.White,
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(10),
+
+            };
+            Label myLabel = new Label
+            {
+                Content = "hey can you get this @" + task + " done soon?",
+                HorizontalAlignment = HorizontalAlignment.Right,
+                FontSize = 14,
+
+            };
+
+            myBorder.Child = myLabel;
+            MessagePanel.Children.Add(myBorder);
+
+           
+            myLabel.MouseDown += new MouseButtonEventHandler(TaskMessage_MouseDown);
+            
+          
+        }
+
+
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
+               
 			Border myBorder = new Border{
 				BorderBrush = Brushes.Black,
 				Background = Brushes.White,
@@ -135,10 +167,34 @@ namespace ToDoList
 
         void TaskMessage_MouseDown(object sender, MouseEventArgs e)
         {
+            Label label = sender as Label;
+            string st = label.Content.ToString();
+
+            string check = "";
+
+            bool a = false;
+
+            for (int i = 0; i < st.Length; i++)
+            {
+                if (st[i] == '@' && !a)
+                {
+                    a = true;
+                }
+                else if (a && st[i] != ' ')
+                {
+                    check += st[i];
+                }
+                else if (a && st[i] == ' ')
+                {
+                    break;
+                }
+
+            }
+
             w = Window.GetWindow(this) as MainWindow;
-            aTask task = w.GetClass(CurClass).GetTask(curTask);
+            aTask task = w.GetClass(CurClass).GetTask(check);
             string[] info = task.GetInfo();
-            w.PopulateInfo(curTask, curClass, info[0], info[1], info[2], info[3]);
+            w.PopulateInfo(check, curClass, info[0], info[1], info[2], info[3]);
             w.ShowTaskPage();
         }
     }
