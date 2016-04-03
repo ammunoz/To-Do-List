@@ -98,6 +98,16 @@ namespace ToDoList
         {
             w = Window.GetWindow(this) as MainWindow;
             w.PokeMember(Title.Text);
+
+            PokeWindow addTaskWindow = new PokeWindow();
+            addTaskWindow.Owner = w;
+            addTaskWindow.ShowInTaskbar = false;
+            addTaskWindow.ResizeMode = ResizeMode.NoResize;
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
         }
     }
 }

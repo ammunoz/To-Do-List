@@ -35,6 +35,18 @@ namespace ToDoList
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            string st = button.Content.ToString();
+
+            if(st == "Class Chat")
+            {
+
+            }
+            else
+            {
+
+            }
+
             MainWindow w = Window.GetWindow(this) as MainWindow;
             Button b = (Button)sender;
             w.ShowMessagePage(b.Content.ToString());
@@ -53,8 +65,12 @@ namespace ToDoList
                 FontSize = 33,
                 Background = Brushes.White,
             };
+
+            b.Click += new RoutedEventHandler(button_Click);
             stack.Children.Add(b);
+
         }
+
         public void DisplayMembers(List<string> members)
         {
             stack.Children.Clear();
@@ -69,6 +85,7 @@ namespace ToDoList
                 FontSize = 33,
                 Background = Brushes.White,
             };
+            b.Click += new RoutedEventHandler(button_Click);
             stack.Children.Add(b);
             foreach (string member in members)
             {

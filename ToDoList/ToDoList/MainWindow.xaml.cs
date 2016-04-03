@@ -211,5 +211,10 @@ namespace ToDoList
             message.Add_Poke(task);
         }
 
+        public void SetMessageState(Boolean a) {
+            message.groupChat = a;
+        }
+
+
     }
 }

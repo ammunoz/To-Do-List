@@ -23,6 +23,8 @@ namespace ToDoList
 
         MainWindow w;
         List<String> messages;
+        List<SolidColorBrush> color;
+        public Boolean groupChat;
         string curClass;
         string curTask;
         public string CurClass
@@ -34,8 +36,10 @@ namespace ToDoList
         public MessagePage()
         {
             curClass = "";
+            groupChat = false;
             InitializeComponent();
             messages = new List<String>();
+            color = new List<SolidColorBrush>();
             AddDefaultMessages();
         
         }
@@ -80,6 +84,14 @@ namespace ToDoList
             messages.Add("Okay!");
             messages.Add("I'm just about done!");
             messages.Add("Uhh.. Later");
+            messages.Add("Sure!");
+            messages.Add("I'm on it!");
+            messages.Add("Thanks :>");
+            messages.Add("I'll do it");
+
+            color.Add(Brushes.Blue);
+            color.Add(Brushes.Red);
+            color.Add(Brushes.Orange);
         }
         private void AddPossibleMessage(string s)
         {
@@ -88,6 +100,11 @@ namespace ToDoList
         private string PickMessage() {
             Random r = new Random();
             return messages[r.Next(0, messages.Count)];
+        }
+
+        private SolidColorBrush PickColor() {
+            Random r = new Random();
+            return color[r.Next(0, color.Count)];
         }
 
         public void Add_Poke(string task)
@@ -114,8 +131,6 @@ namespace ToDoList
 
            
             myLabel.MouseDown += new MouseButtonEventHandler(TaskMessage_MouseDown);
-            
-          
         }
 
 
@@ -154,6 +169,9 @@ namespace ToDoList
                 HorizontalAlignment = HorizontalAlignment.Left,
                 FontSize = 14
             };
+
+            label.Foreground = PickColor();
+
             mBorder.Child = label;
             MessagePanel.Children.Add(mBorder);
 
