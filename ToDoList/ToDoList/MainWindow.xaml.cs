@@ -230,7 +230,14 @@ namespace ToDoList
         }
 
         public void PokeMember(string task) {
-            message.Add_Poke(task);
+            // for each add poke.
+            foreach (var m in messages) {
+                if(m.Key != "Class Chat")
+                m.Value.Add_Poke(task);
+
+                messages.TryAdd(m.Key, m.Value);
+            }
+                
         }
 
         public void SetMessageState(Boolean a) {
@@ -243,6 +250,18 @@ namespace ToDoList
             messages.TryAdd(curMessage, message);
             message = new MessagePage();
             message.CurClass = test2;
+        }
+
+        public void initializeMessage(string c )
+        {
+            List<string> members;
+            members = GetClass(c).Members;
+
+            foreach (var m in members)
+            {
+                MessagePage p = new MessagePage();
+                messages.TryAdd(m, p);
+            }
         }
 
     }
