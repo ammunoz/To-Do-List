@@ -37,17 +37,17 @@ namespace ToDoList
         {
             Button button = sender as Button;
             string st = button.Content.ToString();
-
-            if(st == "Class Chat")
+            MainWindow w = Window.GetWindow(this) as MainWindow;
+            if (st == "Class Chat")
             {
-
+                w.SetMessageState(true);
             }
             else
             {
-
+                w.SetMessageState(false);
             }
 
-            MainWindow w = Window.GetWindow(this) as MainWindow;
+           
             Button b = (Button)sender;
             w.ShowMessagePage(b.Content.ToString());
         }

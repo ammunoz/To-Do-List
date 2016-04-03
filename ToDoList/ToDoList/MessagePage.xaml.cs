@@ -47,6 +47,7 @@ namespace ToDoList
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             MainWindow w = Window.GetWindow(this) as MainWindow;
+            w.SaveMessage();
             w.ShowPrevPage();
         }
 
@@ -170,7 +171,8 @@ namespace ToDoList
                 FontSize = 14
             };
 
-            label.Foreground = PickColor();
+            if(groupChat)
+                label.Foreground = PickColor();
 
             mBorder.Child = label;
             MessagePanel.Children.Add(mBorder);

@@ -33,6 +33,9 @@ namespace ToDoList
         TaskWindow taskPage = new TaskWindow();
         UserControl currentPage;
 
+        string curMessage = " ";
+        ConcurrentDictionary<string, MessagePage> messages = new ConcurrentDictionary<string, MessagePage>();
+
         Stack<UserControl> pageStack = new Stack<UserControl>();
         ConcurrentDictionary<string, string> accounts = new ConcurrentDictionary<string, string>();
         ConcurrentDictionary<string, aClass> classes = new ConcurrentDictionary<string, aClass>();
@@ -125,6 +128,25 @@ namespace ToDoList
 
         public void ShowMessagePage(string s)
         {
+            /*if (!messages.ContainsKey(s))
+            {
+                curMessage = s;
+                MessagePage test = message;
+                
+                string test2 = message.CurClass;
+                message = new MessagePage();
+                message.CurClass = test2;
+                messages.TryAdd(s, test);
+            }
+            else
+            {
+                messages.TryGetValue(s, out message);
+            }*/
+            curMessage = s;
+
+            if (messages.ContainsKey(s))
+                messages.TryGetValue(s, out message);
+
             grid.Children.Clear();
             message.Title.Text = s;
             grid.Children.Add(message);
@@ -215,6 +237,13 @@ namespace ToDoList
             message.groupChat = a;
         }
 
+        public void SaveMessage()
+        {
+            string test2 = message.CurClass;
+            messages.TryAdd(curMessage, message);
+            message = new MessagePage();
+            message.CurClass = test2;
+        }
 
     }
 }
