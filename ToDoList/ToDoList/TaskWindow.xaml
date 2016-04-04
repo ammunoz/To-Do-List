@@ -470,7 +470,8 @@
         </Style>
     </UserControl.Resources>
     <Canvas Background="#FF9DE6FB">
-        <Button x:Name="Poke" Content="Poke" Width="135" Canvas.Left="158" Canvas.Top="74" RenderTransformOrigin="0.054,0.701" Height="49" Style="{DynamicResource ButtonStyle3}" Background="White" BorderBrush="{x:Null}" Foreground="#FF9DE6FB" ClickMode="Press" Click="Poke_Click" FontSize="26.667"/>
+        <Label x:Name="label2" Content="Check up on task:" Canvas.Left="11" Canvas.Top="63.01" FontSize="18.667" Background="{x:Null}" Foreground="White"/>
+        <Button x:Name="Poke" Content="Poke member" Width="135" Canvas.Left="175" Canvas.Top="52.612" RenderTransformOrigin="0.054,0.701" Height="49" Style="{DynamicResource ButtonStyle3}" Background="White" BorderBrush="{x:Null}" Foreground="#FF9DE6FB" ClickMode="Press" Click="Poke_Click" FontSize="18.667"/>
 
         <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="36" Background="White">
             <MenuItem x:Name="menuLabel" Height="36" Width="106.6">

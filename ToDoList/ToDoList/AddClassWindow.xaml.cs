@@ -44,7 +44,7 @@ namespace ToDoList
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             addClassBox.SelectAll();
-            addClassBox.Focus();
+          
         }
 
         //returns class name
