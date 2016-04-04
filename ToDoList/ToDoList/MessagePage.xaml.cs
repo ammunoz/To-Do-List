@@ -121,12 +121,12 @@ namespace ToDoList
             };
             Label myLabel = new Label
             {
-                Content = "hey can you get this @" + task + " done soon?",
+                Content = "hey, hows the @" + task + " task going so far?",
                 HorizontalAlignment = HorizontalAlignment.Right,
                 FontSize = 14,
 
             };
-
+            myLabel.Foreground = Brushes.Blue;
             myBorder.Child = myLabel;
             MessagePanel.Children.Add(myBorder);
 
@@ -180,6 +180,7 @@ namespace ToDoList
             if (RefersToTask(MessageBox.Text))
             {
                 myLabel.MouseDown += new MouseButtonEventHandler(TaskMessage_MouseDown);
+                myLabel.Foreground = Brushes.Blue;
             }
             MessageBox.Text = "";
             MessageBox.Focus();
