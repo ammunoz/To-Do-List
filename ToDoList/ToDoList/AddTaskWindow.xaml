@@ -101,15 +101,15 @@
         </Style>
     </Window.Resources>
     <Canvas Background="#FFA0E6FB">
-        <TextBox x:Name="addTaskBox" Height="28" Canvas.Left="10" TextWrapping="Wrap" Text="Task Name" Canvas.Top="23" Width="210.334" GotFocus="addTaskBox_GotFocus" LostFocus="addTaskBox_LostFocus" BorderBrush="{x:Null}" FontSize="18.667" />
+        <TextBox x:Name="addTaskBox" Height="28" Canvas.Left="10" TextWrapping="Wrap" Text="Task Name" Canvas.Top="10" Width="210.334" GotFocus="addTaskBox_GotFocus" LostFocus="addTaskBox_LostFocus" BorderBrush="{x:Null}" FontSize="13.333" />
         <Button x:Name="doneButton" IsDefault="True" Content="Done" Canvas.Left="145.334" Canvas.Top="225" Width="75" Click="doneButton_Click" Style="{DynamicResource ButtonStyle1}" Background="White" BorderBrush="{x:Null}" FontSize="18.667" />
         <Button x:Name="cancelButton" IsCancel="True" Content="Cancel" Canvas.Left="16.667" Canvas.Top="225" Width="75" Style="{DynamicResource ButtonStyle2}" BorderBrush="{x:Null}" Background="White" FontSize="18.667"/>
-        <ComboBox x:Name="comboBox" Text="Members"  Canvas.Left="10" Canvas.Top="55.04" Width="210.334" IsEditable="True" BorderBrush="{x:Null}" FontSize="18.667" >
+        <ComboBox x:Name="comboBox" Text="Members"  Canvas.Left="10" Canvas.Top="60.373" Width="210.334" IsEditable="True" BorderBrush="{x:Null}" FontSize="13.333" >
             <ComboBoxItem Content="Member1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Member2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Member3" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Month" Text="Month" Canvas.Left="10" Canvas.Top="90.87" Width="75" IsEditable="True">
+        <ComboBox x:Name="Month" Text="Month" Canvas.Left="11.334" Canvas.Top="102.266" Width="89" IsEditable="True">
             <ComboBoxItem Content="January" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="February" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="March" HorizontalAlignment="Left" Width="118"/>
@@ -123,7 +123,7 @@
             <ComboBoxItem Content="November" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="December" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Day" Text="Day" Canvas.Left="90" Canvas.Top="90.87" Width="49" IsEditable="True">
+        <ComboBox x:Name="Day" Text="Day" Canvas.Left="105.334" Canvas.Top="102.266" Width="49" IsEditable="True">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="118"/>
@@ -136,7 +136,7 @@
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
 
-        <ComboBox x:Name="Year" Text="Year" Canvas.Left="144" Canvas.Top="90.87" Width="75" IsEditable="True">
+        <ComboBox x:Name="Year" Text="Year" Canvas.Left="159.334" Canvas.Top="102.266" Width="61" IsEditable="True" FontSize="13.333">
             <ComboBoxItem Content="2014" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="118"/>
@@ -144,6 +144,8 @@
             <ComboBoxItem Content="2018" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
 
-        <TextBox x:Name="description" Height="89" Canvas.Left="10" TextWrapping="Wrap" Text="Description" Canvas.Top="131" Width="210.334" GotFocus="description_GotFocus" LostFocus="description_LostFocus" BorderBrush="{x:Null}" FontSize="18.667" />
+        <TextBox x:Name="description" Height="89" Canvas.Left="10" TextWrapping="Wrap" Text="Description" Canvas.Top="131" Width="210.334" GotFocus="description_GotFocus" LostFocus="description_LostFocus" BorderBrush="{x:Null}" FontSize="13.333" />
+        <Label x:Name="label" Content="Assigned to:" Canvas.Left="10" Canvas.Top="38" Height="27.46" Foreground="Black" Width="76.683"/>
+        <Label x:Name="label1" Content="Due Date:" Canvas.Left="10" Canvas.Top="78.773"/>
     </Canvas>
 </Window>

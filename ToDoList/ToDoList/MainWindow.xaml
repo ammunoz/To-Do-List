@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
-        Title="To-Do List" Height="568" Width="320" ResizeMode="NoResize" WindowStyle="None">
+        Title="To-Do List" Height="568" Width="320" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
             

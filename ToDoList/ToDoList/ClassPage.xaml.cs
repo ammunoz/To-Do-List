@@ -113,6 +113,7 @@ namespace ToDoList
                     button.Click += new RoutedEventHandler(taskButton_Click);
 
                     classStackPanel.Children.Add(button);
+                    noTasks.Visibility = Visibility.Hidden;
                 }
             }
         }

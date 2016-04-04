@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="568" d:DesignWidth="320">
     <Grid Background="White">
-    	<Grid.ColumnDefinitions>
-    		<ColumnDefinition Width="146*"/>
-    		<ColumnDefinition Width="175*"/>
-    	</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="175*"/>
+        </Grid.ColumnDefinitions>
 
         <ScrollViewer x:Name="classScrollView" HorizontalAlignment="Left" Height="532" Margin="0,36,0,0" VerticalAlignment="Top" Width="320" Background="#FF9DE6FB" Grid.ColumnSpan="2">
             <StackPanel x:Name="classStackPanel" HorizontalAlignment="Left" Height="532" VerticalAlignment="Top" Width="303"/>
@@ -51,6 +51,7 @@
 
             </MenuItem>
         </Menu>
+        <Label x:Name="noTasks" Content="No Tasks" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-70.666,41,0,0" Grid.Column="1" FontSize="40" Foreground="White"/>
         <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="74.856,41,57.356,0" VerticalAlignment="Top"/>
 
     </Grid>

@@ -72,6 +72,10 @@ namespace ToDoList
             {
                 w.ShowHome();
                 error_message.Visibility = Visibility.Hidden;
+                usernameBox.Text = "Username";
+                passwordBox.Clear();
+                passwordLabel.Visibility = Visibility.Visible;
+                passwordLabel.IsEnabled = true;
             }
             else
             {

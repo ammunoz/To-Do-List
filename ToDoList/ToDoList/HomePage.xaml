@@ -56,7 +56,7 @@
             </MenuItem>
             <!-- ADD -->
         </Menu>
-        <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
+        <Label x:Name="noClass" Content="No Classes" HorizontalAlignment="Left" Margin="60.666,41,0,0" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
 
 
     </Grid>

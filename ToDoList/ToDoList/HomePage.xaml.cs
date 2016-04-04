@@ -81,6 +81,7 @@ namespace ToDoList
 
                     w.GetClass(addClassWindow.ClassName).Members = addClassWindow.Members;
                     w.initializeMessage(addClassWindow.ClassName);
+                    noClass.Visibility = Visibility.Hidden;
                 }
                 
             }
