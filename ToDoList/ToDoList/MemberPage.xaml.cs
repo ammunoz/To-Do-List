@@ -97,7 +97,7 @@ namespace ToDoList
                     Height = 75,
                     FontSize = 33,
                     Background = Brushes.White,
-                    Foreground = (Brush)bc.ConvertFrom("#FFA0E6FB"),
+                    //Foreground = (Brush)bc.ConvertFrom("#FFA0E6FB"),
 
                 };
                 b.Click += new RoutedEventHandler(button_Click);

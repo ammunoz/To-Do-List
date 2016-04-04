@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
-        Title="PokeWindow" Height="132.358" Width="160.58">
+        Title="PokeWindow" Height="155.691" Width="199.58">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -64,8 +64,8 @@
         </Style>
     </Window.Resources>
     <Grid Background="#FFA0E6FB" Margin="0,0,0.062,0">
-        <Button x:Name="button" Content="Done" HorizontalAlignment="Left" Margin="35.424,63.016,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Background="White"/>
-        <Label x:Name="label" Content="Sent Poke!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="42" Width="120.726" FontSize="24"/>
+        <Button x:Name="button" Content="Done" HorizontalAlignment="Left" Margin="24.091,80,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" Background="White"/>
+        <Label x:Name="label" Content="Poke Sent!&#xD;&#xA;Check Messages&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,44.691" Width="201.518" FontSize="16"/>
 
     </Grid>
 </Window>
