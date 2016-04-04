@@ -30,6 +30,13 @@ namespace ToDoList
 
         private void calendar_Click(object sender, RoutedEventArgs e)
         {
+            CalendarWarning addTaskWindow = new CalendarWarning();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+
             w = Window.GetWindow(this) as MainWindow;
             w.ShowCalendar();
         }
@@ -71,9 +78,11 @@ namespace ToDoList
                     };
                     button.Click += new RoutedEventHandler(classButton_Click);
                     classStackPanel.Children.Add(button);
+
+                    w.GetClass(addClassWindow.ClassName).Members = addClassWindow.Members;
+                    w.initializeMessage(addClassWindow.ClassName);
                 }
-                w.GetClass(addClassWindow.ClassName).Members = addClassWindow.Members;
-                w.initializeMessage(addClassWindow.ClassName);
+                
             }
         }
 
@@ -86,5 +95,25 @@ namespace ToDoList
             w.ShowClassPage();
         }
 
+        // edit
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NotImplementedWindow addTaskWindow = new NotImplementedWindow();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            NotImplementedWindow addTaskWindow = new NotImplementedWindow();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
     }
 }

@@ -104,5 +104,15 @@ namespace ToDoList
                 stack.Children.Add(b);
             }
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NotImplementedWindow addTaskWindow = new NotImplementedWindow();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
     }
 }

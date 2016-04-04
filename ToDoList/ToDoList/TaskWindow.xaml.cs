@@ -39,19 +39,7 @@ namespace ToDoList
             Day.Text = day; 
             Year.Text = year; 
             description.Text = d;
-            /*
-            aClass c = w.GetClass(classTitle);
 
-            if (c != null)
-            {
-                aTask task = c.GetTask(Title.Text);
-                if (task != null)
-                {
-                    string[] info = task.GetInfo();
-                    
-                }
-            }
-            */
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -62,6 +50,13 @@ namespace ToDoList
 
         private void calendar_Click(object sender, RoutedEventArgs e)
         {
+            CalendarWarning addTaskWindow = new CalendarWarning();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+
             w = Window.GetWindow(this) as MainWindow;
             w.ShowCalendar();
         }
@@ -69,7 +64,7 @@ namespace ToDoList
         private void member_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            w.ShowMember(); ;
+            w.ShowMember(className);
         }
 
         private void description_LostFocus(object sender, RoutedEventArgs e)
@@ -103,6 +98,16 @@ namespace ToDoList
             addTaskWindow.Owner = w;
             addTaskWindow.ShowInTaskbar = false;
             addTaskWindow.ResizeMode = ResizeMode.NoResize;
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            CalendarWarning addTaskWindow = new CalendarWarning();
 
             if (addTaskWindow.ShowDialog() == true)
             {

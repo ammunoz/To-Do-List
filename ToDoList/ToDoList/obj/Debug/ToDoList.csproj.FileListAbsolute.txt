@@ -149,3 +149,7 @@ C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\roundedLa
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\App.baml
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\PokeWindow.g.cs
 C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\PokeWindow.baml
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\NotImplementedWindow.g.cs
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\NotImplementedWindow.baml
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\CalendarWarning.g.cs
+C:\Users\Jerome\Desktop\CPSC481\To-Do-List\ToDoList\ToDoList\obj\Debug\CalendarWarning.baml

@@ -88,7 +88,15 @@ namespace ToDoList
             w = Window.GetWindow(this) as MainWindow;
             if (usernameBox.Text != "Username" && passwordBox.Password != "")
             {
-                if (w.CreateAccount(usernameBox.Text, passwordBox.Password)) w.ShowLogin();
+                if (w.CreateAccount(usernameBox.Text, passwordBox.Password))
+                {
+                    w.ShowLogin();
+                    error_message.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    error_message.Visibility = Visibility.Visible;
+                }
             }
         }
 

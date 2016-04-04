@@ -107,7 +107,7 @@
         <ComboBox x:Name="comboBox" Text="Members"  Canvas.Left="10" Canvas.Top="55.04" Width="210.334" IsEditable="True" BorderBrush="{x:Null}" FontSize="18.667" >
             <ComboBoxItem Content="Member1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Member2" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Member2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Member3" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
         <ComboBox x:Name="Month" Text="Month" Canvas.Left="10" Canvas.Top="90.87" Width="75" IsEditable="True">
             <ComboBoxItem Content="January" HorizontalAlignment="Left" Width="118"/>
@@ -137,6 +137,7 @@
         </ComboBox>
 
         <ComboBox x:Name="Year" Text="Year" Canvas.Left="144" Canvas.Top="90.87" Width="75" IsEditable="True">
+            <ComboBoxItem Content="2014" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="118"/>

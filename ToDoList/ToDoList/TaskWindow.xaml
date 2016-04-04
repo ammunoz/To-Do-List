@@ -470,17 +470,17 @@
         </Style>
     </UserControl.Resources>
     <Canvas Background="#FF9DE6FB">
-        <Button x:Name="Poke" Content="&quot;Poke&quot; Place holder" Width="135" Canvas.Left="158" Canvas.Top="74" RenderTransformOrigin="0.054,0.701" Height="49" Style="{DynamicResource ButtonStyle3}" Background="White" BorderBrush="{x:Null}" Foreground="#FF9DE6FB" ClickMode="Press" Click="Poke_Click"/>
+        <Button x:Name="Poke" Content="Poke" Width="135" Canvas.Left="158" Canvas.Top="74" RenderTransformOrigin="0.054,0.701" Height="49" Style="{DynamicResource ButtonStyle3}" Background="White" BorderBrush="{x:Null}" Foreground="#FF9DE6FB" ClickMode="Press" Click="Poke_Click" FontSize="26.667"/>
 
         <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="36" Background="White">
             <MenuItem x:Name="menuLabel" Height="36" Width="106.6">
                 <!-- MOVABLE HEADER -->
                 <MenuItem.Header>
-                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" FontSize="24" Width="94.417" Height="36.667" TextAlignment="Center" Foreground="#FF9DE6FB"/>
+                    <TextBlock Text="≡" VerticalAlignment="Center" RenderTransformOrigin="1.522,0.5" FontSize="24" Width="95" Height="37" TextAlignment="Center" Foreground="#FF9DE6FB"/>
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click" />
                 <MenuItem x:Name="member" Header="Member" HorizontalAlignment="Left" Width="140" Click="member_Click" />
                 <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click"  />
                 <Separator HorizontalAlignment="Left" Width="140"/>
@@ -496,7 +496,7 @@
         <Label x:Name="test" Content=" " HorizontalAlignment="Center"  Margin="40,41,197,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Assigned To:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18.667" Foreground="White" Canvas.Left="10" Canvas.Top="102.84"/>
         <Label x:Name="label1" Content="Due Date" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18.667" Foreground="White" Canvas.Left="10" Canvas.Top="241.67"/>
-        <ComboBox x:Name="Month" Text="Month" IsEditable="True" Canvas.Left="10" Canvas.Top="281.5" Width="78.973" SelectedValuePath="Content" FontSize="18.667" Foreground="#FF9DE6FB">
+        <ComboBox x:Name="Month" Text="Month" IsEditable="True" Canvas.Left="10" Canvas.Top="282" Width="107" SelectedValuePath="Content" FontSize="18.667" Foreground="#FF9DE6FB">
             <ComboBoxItem Content="January" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="February" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="March" HorizontalAlignment="Left" Width="118"/>
@@ -510,7 +510,7 @@
             <ComboBoxItem Content="November" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="December" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Day" Text="Day" IsEditable="True" Canvas.Left="93.973" Canvas.Top="281.63" Width="59" SelectedValuePath="Content" FontSize="18.667" Foreground="#FF9DE6FB">
+        <ComboBox x:Name="Day" Text="Day" IsEditable="True" Canvas.Left="122" Canvas.Top="282" Width="59" SelectedValuePath="Content" FontSize="18.667" Foreground="#FF9DE6FB">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="118"/>
@@ -522,7 +522,7 @@
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Year" Text="Year" IsEditable="True" Canvas.Left="157.973" Canvas.Top="281.37" Width="69.27" SelectedValuePath="Content" Height="30.96" FontSize="18.667" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF9DE6FB" BorderBrush="{x:Null}">
+        <ComboBox x:Name="Year" Text="Year" IsEditable="True" Canvas.Left="186" Canvas.Top="282" Width="82" SelectedValuePath="Content" Height="31" FontSize="18.667" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FF9DE6FB" BorderBrush="{x:Null}" RenderTransformOrigin="1.068,0.549">
             <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="118"/>

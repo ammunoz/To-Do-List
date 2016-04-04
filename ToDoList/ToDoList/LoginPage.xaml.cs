@@ -68,7 +68,15 @@ namespace ToDoList
         private void button_Click(object sender, RoutedEventArgs e)
         {
             w = Window.GetWindow(this) as MainWindow;
-            if (w.VerifyAccount(usernameBox.Text, passwordBox.Password)) w.ShowHome();
+            if (w.VerifyAccount(usernameBox.Text, passwordBox.Password))
+            {
+                w.ShowHome();
+                error_message.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                error_message.Visibility = Visibility.Visible;
+            }
         }
     }
 }

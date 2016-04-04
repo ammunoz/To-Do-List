@@ -160,8 +160,6 @@
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Place Holder 1" HorizontalAlignment="Left" Width="140" Foreground="Black" />
-                <MenuItem Header="Place Holder 2" HorizontalAlignment="Left" Width="140" Foreground="Black" />
                 <Separator HorizontalAlignment="Left" Width="140"/>
                 <MenuItem x:Name="Back" Header="Back" HorizontalAlignment="Left" Width="140" Click="Back_Click" Foreground="Black" />
             </MenuItem>

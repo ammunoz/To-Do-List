@@ -28,8 +28,8 @@
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" />
-                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" />
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click" />
+                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click_1" />
                 <MenuItem x:Name="member" Header="Members" HorizontalAlignment="Left" Width="140" Click="member_Click" />
                 <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" />
                 <Separator HorizontalAlignment="Left" Width="140"/>

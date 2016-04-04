@@ -176,6 +176,8 @@
 
         <!-- IMAGE -->
         <Image Source ="Images/to-do-symbol.png" Height="154" VerticalAlignment="Top" Margin="72.63,86.333,70.74,0" RenderTransformOrigin="0,0.52"/>
-        <TextBox x:Name="textBox" Height="46" Margin="106.63,35.333,97,0" TextWrapping="Wrap" Text="DO-ET" VerticalAlignment="Top" Background="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Black" SpellCheck.IsEnabled="True" CaretBrush="Black" SelectionBrush="{x:Null}" Foreground="White" FontSize="32"/>
+        
+        <Label x:Name="error_message" Content="Invalid Username or Password" HorizontalAlignment="Left" Margin="72.63,0,0,111" VerticalAlignment="Bottom" Foreground="Red" Visibility="Hidden"/>
+        <Label x:Name="label2" Content="DO-ET" HorizontalAlignment="Left" Margin="96,40.803,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="32" Width="118.53" Background="{x:Null}" Foreground="White"/>
     </Grid>
 </UserControl>

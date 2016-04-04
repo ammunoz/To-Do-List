@@ -87,6 +87,9 @@
       <DependentUpon>CalendarDay.xaml</DependentUpon>
     </Compile>
     <Compile Include="aClass.cs" />
+    <Compile Include="CalendarWarning.xaml.cs">
+      <DependentUpon>CalendarWarning.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClassPage.xaml.cs">
       <DependentUpon>ClassPage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,9 @@
     </Compile>
     <Compile Include="MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotImplementedWindow.xaml.cs">
+      <DependentUpon>NotImplementedWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PokeWindow.xaml.cs">
       <DependentUpon>PokeWindow.xaml</DependentUpon>
@@ -121,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CalendarDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CalendarWarning.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotImplementedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

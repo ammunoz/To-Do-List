@@ -23,7 +23,7 @@ namespace ToDoList
 
         MainWindow w;
 		BrushConverter bc = new BrushConverter();
-        string month, day, year, d;
+        string month, day, year, d, mem;
         
         // class data
 
@@ -45,8 +45,35 @@ namespace ToDoList
             w.ShowPrevPage();
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NotImplementedWindow addTaskWindow = new NotImplementedWindow();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            NotImplementedWindow addTaskWindow = new NotImplementedWindow();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+        }
+
         private void calendar_Click(object sender, RoutedEventArgs e)
         {
+            CalendarWarning addTaskWindow = new CalendarWarning();
+
+            if (addTaskWindow.ShowDialog() == true)
+            {
+
+            }
+
             w = Window.GetWindow(this) as MainWindow;
             w.ShowCalendar();
         }
@@ -69,6 +96,7 @@ namespace ToDoList
                     day = addTaskWindow.Day.Text;
                     year = addTaskWindow.Year.Text;
                     d = addTaskWindow.description.Text;
+                    
                     Button button = new Button
                     {
 						

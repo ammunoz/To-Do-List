@@ -26,8 +26,8 @@
                 </MenuItem.Header>
 
                 <!-- SUB MENUS -->
-                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" Foreground="Black" />
-                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" Foreground="Black" />
+                <MenuItem Header="Edit" HorizontalAlignment="Left" Width="140" Foreground="Black" Click="MenuItem_Click" />
+                <MenuItem Header="Sort" HorizontalAlignment="Left" Width="140" Foreground="Black" Click="MenuItem_Click_1" />
                 <MenuItem x:Name="calendar" Header="Calendar" HorizontalAlignment="Left" Width="140" Click="calendar_Click" Foreground="Black" />
                 <Separator HorizontalAlignment="Left" Width="140"/>
                 <MenuItem x:Name="Back" Header="Close" HorizontalAlignment="Left" Width="140" Click="Close_Click" Foreground="Black"  />
